@@ -1,16 +1,41 @@
-# React + Vite
+# Aval Angadi
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aval Angadi is a Vite-powered React storefront with React Router, Tailwind CSS, and a small Express health-check server.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Run the API separately when needed:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run server
+```
 
-## Expanding the Oxlint configuration
+## Verification
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run lint
+npm run build
+```
+
+## Project structure
+
+```text
+public/                  Static files served as-is
+server/                  Express API
+src/
+  assets/                Imported images and other bundled assets
+  components/            Shared UI components
+  layout/                Page-level shared layouts
+  pages/                  Route pages and page-specific sections
+  routes/                 React Router configuration
+  App.jsx                 Application composition
+  index.css               Global styles and Tailwind import
+  main.jsx                Browser entry point
+```
+
+Generated files are written to `dist/`. Installed packages are stored in `node_modules/`. Both directories are excluded from Git.
