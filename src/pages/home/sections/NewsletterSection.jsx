@@ -28,7 +28,7 @@ function NewsletterSection() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-[#244b15]/95 via-[#244b15]/92 to-[#244b15]/25" />
 
-          <div className="relative z-10 grid min-h-[235px] items-center gap-7 px-6 py-8 text-white sm:px-9 lg:grid-cols-[1.05fr_1.35fr] lg:px-12 lg:py-10">
+          <div className="relative z-10 grid min-h-[235px] items-center gap-7 px-6 py-8 text-white sm:min-h-[165px] sm:grid-cols-[0.9fr_1.35fr] sm:gap-5 sm:px-7 sm:py-6 lg:min-h-[235px] lg:grid-cols-[1.05fr_1.35fr] lg:px-12 lg:py-10">
             <div className="flex items-start gap-5">
               <MailOpen className="hidden shrink-0 text-[#a5ad64] sm:block" size={88} strokeWidth={1.1} />
               <div>
