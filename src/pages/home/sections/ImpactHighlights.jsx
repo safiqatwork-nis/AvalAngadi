@@ -1,10 +1,10 @@
-import { Leaf } from 'lucide-react'
 import ecoCertificationLogo from '../../../assets/eco-certification.png'
 import fssaiLogo from '../../../assets/fssai.png'
 import isoLogo from '../../../assets/ISO-Logo.png'
 import startupIndiaLogo from '../../../assets/startup-india.png'
 import womenOwnedLogo from '../../../assets/women-owned.png'
 import womenPoweringChange from '../../../assets/women-powering-change.png'
+import oliveBranch from '../../../assets/decorations/olive-branch.png'
 
 const certifications = [
   { image: fssaiLogo, label: 'FSSAI' },
@@ -43,7 +43,7 @@ function ImpactHighlights() {
               When you shop from Aval Angadi,<br />you support a bigger purpose.
             </p>
           </div>
-          <Leaf className="absolute bottom-5 right-7 rotate-[-18deg] text-[#899875]" size={92} strokeWidth={1} />
+          <img src={oliveBranch} alt="" aria-hidden="true" className="pointer-events-none absolute bottom-2 right-4 h-28 w-28 -rotate-12 object-contain opacity-55" />
         </article>
 
         <article

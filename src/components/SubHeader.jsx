@@ -6,7 +6,7 @@ const links = [
   { label: 'Home', to: '/' },
   { label: 'Stores', to: '/shop' },
   { label: 'Products', to: '/shop' },
-  { label: 'About Us', to: '/#about' },
+  { label: 'About Us', to: '/about' },
   { label: 'Contact Us', to: '/#contact' },
   { label: 'Join as Seller', to: '/signup' },
   { label: 'Seller Login', to: '/login' },
@@ -60,7 +60,7 @@ function SubHeader() {
               to={link.to}
               className={({ isActive }) =>
                 `flex min-w-max flex-1 items-center justify-center px-5 text-[13px] font-bold uppercase tracking-tight transition hover:bg-[#b40008] ${
-                  isActive && link.to === '/' ? 'bg-[#c00009]' : ''
+                  isActive && (link.to === '/' || link.to === '/about') ? 'bg-[#c00009]' : ''
                 }`
               }
             >

@@ -45,13 +45,13 @@ function HeroSection() {
   return (
     <section className="relative bg-white pb-0 sm:pb-[112px]">
       <div
-        className="relative mx-3 min-h-[360px] overflow-hidden rounded-xl bg-cover bg-[68%_center] sm:mx-0 sm:min-h-[455px] sm:rounded-none lg:bg-center"
+        className="relative mx-3 min-h-[430px] overflow-hidden rounded-xl bg-cover bg-[68%_center] sm:mx-0 sm:min-h-[520px] sm:rounded-none lg:min-h-[575px] lg:bg-center"
         style={{ backgroundImage: `url(${slides[activeSlide].image})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf0]/95 via-[#fffaf0]/68 to-transparent lg:via-[#fffaf0]/20" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/65 via-black/30 to-transparent" />
 
-        <div className="relative z-10 mx-auto flex min-h-[360px] max-w-[1440px] flex-col justify-between px-5 py-5 sm:min-h-[455px] sm:py-11 lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[430px] max-w-[1440px] flex-col justify-between px-5 py-8 sm:min-h-[520px] sm:py-14 lg:min-h-[575px] lg:px-8 lg:py-16">
           <div className="flex max-w-[650px] flex-col items-start gap-4 sm:flex-row sm:gap-6">
             <div className="flex h-[88px] w-[88px] shrink-0 flex-col items-center justify-center rounded-xl bg-[#294d17] px-2 text-center text-white shadow-lg sm:h-[176px] sm:w-[176px] sm:rounded-2xl sm:px-4">
               <img

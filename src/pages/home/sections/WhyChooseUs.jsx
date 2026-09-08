@@ -1,4 +1,6 @@
 import { Flower2, HandHeart, PackageCheck, Sprout, Wheat } from 'lucide-react'
+import botanicalBranch from '../../../assets/decorations/botanical-branch.png'
+import leafPair from '../../../assets/decorations/leaf-pair.png'
 
 const benefits = [
   {
@@ -30,8 +32,10 @@ const benefits = [
 
 function WhyChooseUs() {
   return (
-    <section className="bg-white pb-12 sm:pb-16">
-      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-white pb-12 sm:pb-16">
+      <img src={botanicalBranch} alt="" aria-hidden="true" className="pointer-events-none absolute -bottom-9 -left-10 h-32 w-32 -rotate-12 object-contain opacity-20 sm:h-40 sm:w-40" />
+      <img src={leafPair} alt="" aria-hidden="true" className="pointer-events-none absolute -right-7 top-0 h-24 w-24 rotate-12 object-contain opacity-20 sm:h-32 sm:w-32" />
+      <div className="relative z-10 mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
         <h2 className="mb-7 text-lg font-bold text-neutral-950 sm:text-xl">Why Choose Us</h2>
 
         <div className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3 lg:grid-cols-5 lg:gap-8">

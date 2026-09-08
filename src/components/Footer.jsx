@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import AvalAngadiLogo from '../assets/aval-angadi-logo.png'
 
 const quickLinks = [
-  ['About Us', '/#about'],
+  ['About Us', '/about'],
   ['Our Stores', '/shop'],
   ['Products', '/shop'],
   ['Blog', '/blog'],
