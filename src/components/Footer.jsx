@@ -8,13 +8,13 @@ const quickLinks = [
   ['Our Stores', '/shop'],
   ['Products', '/shop'],
   ['Blog', '/blog'],
-  ['Contact Us', '/#contact'],
+  ['Contact Us', '/contact'],
   ['Join as Seller', '/signup'],
 ]
 
 const customerLinks = [
   ['My Account', '/profile'],
-  ['Order Tracking', '/profile'],
+  ['Order Tracking', '/order-tracking'],
   ['Wishlist', '/wishlist'],
   ['Returns & Refunds', '/returns'],
   ['Shipping Policy', '/shipping-policy'],
@@ -95,7 +95,7 @@ function Footer() {
             <ul className="space-y-3 text-center">
               {categoryLinks.map((category) => (
                 <li key={category}>
-                  <Link to="/shop" className="text-[12px] font-medium text-neutral-700 transition hover:text-[#b5121b]">
+                  <Link to={`/shop?category=${encodeURIComponent(category)}`} className="text-[12px] font-medium text-neutral-700 transition hover:text-[#b5121b]">
                     {category}
                   </Link>
                 </li>

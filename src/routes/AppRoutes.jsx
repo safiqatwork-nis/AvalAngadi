@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import RoutePlaceholder from '../components/RoutePlaceholder'
 import Admin from '../pages/admin/Admin'
 import About from '../pages/about/About'
 import Cart from '../pages/cart/Cart'
@@ -25,6 +26,18 @@ function AppRoutes() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/about" element={<About />} />
+      {[
+        ['/contact', 'Contact Us'],
+        ['/blog', 'Blog'],
+        ['/order-tracking', 'Order Tracking'],
+        ['/returns', 'Returns & Refunds'],
+        ['/shipping-policy', 'Shipping Policy'],
+        ['/faq', 'FAQs'],
+        ['/privacy-policy', 'Privacy Policy'],
+        ['/terms-and-conditions', 'Terms & Conditions'],
+      ].map(([path, title]) => (
+        <Route key={path} path={path} element={<RoutePlaceholder title={title} />} />
+      ))}
     </Routes>
   )
 }

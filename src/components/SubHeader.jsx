@@ -7,7 +7,7 @@ const links = [
   { label: 'Stores', to: '/shop' },
   { label: 'Products', to: '/shop' },
   { label: 'About Us', to: '/about' },
-  { label: 'Contact Us', to: '/#contact' },
+  { label: 'Contact Us', to: '/contact' },
   { label: 'Join as Seller', to: '/signup' },
   { label: 'Seller Login', to: '/login' },
 ]

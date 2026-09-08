@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HeroSection from '../components/HeroSection'
@@ -5,7 +6,11 @@ import MobileBottomNav from '../components/MobileBottomNav'
 import { useLocation } from 'react-router-dom'
 
 function MainLayout({ children }) {
-  const { pathname } = useLocation()
+  const { pathname, search } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname, search])
 
   return (
     <div className="flex min-h-screen flex-col bg-neutral-50 pb-[66px] lg:pb-0">
