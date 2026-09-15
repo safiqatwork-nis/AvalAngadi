@@ -24,7 +24,7 @@ function ContactChannel({ icon: Icon, title, children }) {
 
 function Contact() {
   const [draftReady, setDraftReady] = useState(false)
-  const [showAll, setShowAll] = useState(false)
+  const [openFaq, setOpenFaq] = useState(null)
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -103,8 +103,8 @@ function Contact() {
         <img src={branch} className="contact-leaves contact-leaves-bottom" alt="" />
         <img src={branch} className="contact-leaves contact-leaves-right" alt="" />
         <div className="contact-section-inner">
-          <div className="contact-faq-heading"><div><h2>Frequently Asked Questions</h2><p className="contact-intro">Quick answers to common questions. If you still need help, feel free to reach out to us.</p></div><button type="button" onClick={() => setShowAll(!showAll)} aria-expanded={showAll}>{showAll ? 'Close all FAQs' : 'View all FAQs'} <ArrowRight size={17} /></button></div>
-          <div className="contact-faq-grid">{[faqs.slice(0, 4), faqs.slice(4)].map((column, index) => <div key={index}>{column.map(([question, answer]) => <details key={`${question}-${showAll}`} open={showAll || undefined}><summary>{question}<Plus size={19} /></summary><p>{answer}</p></details>)}</div>)}</div>
+          <div className="contact-faq-heading"><div><h2>Frequently Asked Questions</h2><p className="contact-intro">Quick answers to common questions. If you still need help, feel free to reach out to us.</p></div></div>
+          <div className="contact-faq-grid">{[faqs.slice(0, 4), faqs.slice(4)].map((column, index) => <div key={index} className="contact-faq-column">{column.map(([question, answer]) => <details key={question} open={openFaq === question} onToggle={(event) => setOpenFaq(event.currentTarget.open ? question : null)}><summary>{question}<Plus size={19} /></summary><p>{answer}</p></details>)}</div>)}</div>
         </div>
       </section>
 

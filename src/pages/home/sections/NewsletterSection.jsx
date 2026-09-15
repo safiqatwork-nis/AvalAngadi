@@ -32,7 +32,7 @@ function NewsletterSection() {
             <div className="flex items-start gap-5">
               <MailOpen className="hidden shrink-0 text-[#a5ad64] sm:block" size={88} strokeWidth={1.1} />
               <div>
-                <h2 className="font-['Georgia'] text-[25px] font-bold leading-tight sm:text-[28px]">
+                <h2 className="font-['Georgia'] !text-[#f7f8ef] text-[25px] font-bold leading-tight sm:text-[28px]">
                   Stay Updated with<br />New Arrivals &amp; Offers
                 </h2>
                 <p className="mt-4 max-w-[390px] text-[13px] font-semibold leading-6 text-white/90 sm:text-[14px]">

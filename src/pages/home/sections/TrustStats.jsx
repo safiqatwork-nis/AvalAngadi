@@ -42,7 +42,7 @@ function TrustStats() {
             <article
               key={label}
               className={`flex min-w-0 items-center gap-3 px-3 py-3 sm:px-4 lg:py-0 ${
-                index % 2 === 0 ? 'border-r border-[#e5e1d7] lg:border-r-0' : ''
+                index === 5 ? 'order-5 border-r border-[#e5e1d7] lg:order-none lg:border-r-0' : index === 4 ? 'order-6 lg:order-none' : index % 2 === 0 ? 'border-r border-[#e5e1d7] lg:border-r-0' : ''
               } ${index < 4 ? 'border-b border-[#e5e1d7] lg:border-b-0' : ''} ${
                 index > 0 ? 'lg:border-l lg:border-[#e5e1d7]' : ''
               }`}
@@ -51,7 +51,7 @@ function TrustStats() {
                 <Icon size={27} strokeWidth={1.55} />
               </span>
               <div className="min-w-0">
-                <h2 className="text-[14px] font-extrabold leading-5 text-[#183112] sm:text-[16px] lg:text-[15px]">
+                <h2 className="!text-[14px] font-extrabold leading-5 text-[#183112] sm:!text-[14px] lg:!text-[15px]">
                   {value}
                 </h2>
                 <p className="mt-0.5 text-[9px] font-semibold leading-4 text-neutral-600 sm:text-[10px]">
