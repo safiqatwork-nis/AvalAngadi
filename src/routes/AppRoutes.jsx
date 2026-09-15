@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import RoutePlaceholder from '../components/RoutePlaceholder'
 import Admin from '../pages/admin/Admin'
 import About from '../pages/about/About'
+import Contact from '../pages/contact/Contact'
 import Cart from '../pages/cart/Cart'
 import Checkout from '../pages/checkout/Checkout'
 import Home from '../pages/home/Home'
@@ -26,8 +27,9 @@ function AppRoutes() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
       {[
-        ['/contact', 'Contact Us'],
+
         ['/blog', 'Blog'],
         ['/order-tracking', 'Order Tracking'],
         ['/returns', 'Returns & Refunds'],
