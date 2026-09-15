@@ -91,7 +91,12 @@
   padding:0 18px;
   border-right:1px solid #e2dfd3;
   font-size:13px;
-  line-height:1.6
+  line-height:1.6;
+  position:relative;
+  z-index:2;
+  border-radius:10px;
+  background:rgba(255,250,238,.58);
+  backdrop-filter:blur(2px)
 }
 
 .contact-promises>div:first-child {
@@ -99,7 +104,8 @@
 }
 
 .contact-promises>div:last-child {
-  border:0
+  border:0;
+  background:rgba(255,250,238,.72)
 }
 
 .contact-promises svg {
@@ -660,13 +666,18 @@
 .contact-promises>div {
   font-size:8px;
   line-height:1.25;
-  padding:0 6px
+  padding:5px 6px;
+  border-radius:8px
 }
 
 .contact-promises svg {
   width:23px;
   height:23px;
   margin-bottom:3px
+}
+
+.contact-promises>div:last-child {
+  background:rgba(255,250,238,.76)
 }
 
 .contact-panel {

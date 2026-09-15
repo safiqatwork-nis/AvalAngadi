@@ -50,7 +50,7 @@ function Contact() {
           <div className="contact-promises">
             <div><Sprout /><strong>Real People<br />Real Support</strong></div>
             <div><Headphones /><strong>Quick Response<br />Within 24 Hours</strong></div>
-            <div><Heart /><span>Together for a<br />Healthier Tomorrow</span></div>
+            <div><Heart /><strong>Together for a<br />Healthier Tomorrow</strong></div>
           </div>
         </div>
       </section>
