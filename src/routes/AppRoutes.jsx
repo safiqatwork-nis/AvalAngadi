@@ -8,8 +8,8 @@ import Checkout from '../pages/checkout/Checkout'
 import Home from '../pages/home/Home'
 import Login from '../pages/login/Login'
 import Product from '../pages/product/Product'
+import Products from '../pages/products/Products'
 import Profile from '../pages/profile/Profile'
-import Shop from '../pages/shop/Shop'
 import Signup from '../pages/signup/Signup'
 import Wishlist from '../pages/wishlist/Wishlist'
 
@@ -19,7 +19,8 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/shop" element={<Shop />} />
+      <Route path="/shop" element={<Products />} />
+      <Route path="/products" element={<Products />} />
       <Route path="/product/:id" element={<Product />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />} />

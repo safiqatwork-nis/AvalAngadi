@@ -80,35 +80,34 @@ function Header() {
             MAIN HEADER
         ======================================================== */}
         <div className="border-b border-[#e5e5e5] shadow-[0_1px_5px_rgba(0,0,0,0.08)]">
-          <div className="mx-auto flex h-[68px] w-full items-center gap-2 px-3 lg:hidden">
-            <button
-              type="button"
-              className="flex h-9 w-9 shrink-0 items-center justify-center text-[#24452e]"
-              onClick={() => setMobileMenuOpen((open) => !open)}
-              aria-expanded={mobileMenuOpen}
-              aria-label="Toggle navigation"
-            >
-              {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
-            </button>
+          <div className="mx-auto w-full px-3 py-2 lg:hidden">
+            <div className="flex h-11 items-center gap-2">
+              <button
+                type="button"
+                className="flex h-9 w-9 shrink-0 items-center justify-center text-[#172d20]"
+                onClick={() => setMobileMenuOpen((open) => !open)}
+                aria-expanded={mobileMenuOpen}
+                aria-label="Toggle navigation"
+              >
+                {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+              </button>
 
-            <Link to="/" className="flex shrink-0 items-center gap-1.5" aria-label="Aval Angadi Home">
-              <img src={AvalAngadiLogo} alt="Aval Angadi" className="h-11 w-11 object-contain" />
-              <span className="hidden min-[390px]:block">
-                <strong className="block whitespace-nowrap text-[15px] font-bold leading-none text-[#b5121b]">Aval Angadi</strong>
-                <small className="mt-1 block whitespace-nowrap text-[6px] font-semibold text-neutral-500">A Marketplace by Women</small>
-              </span>
-            </Link>
+              <Link to="/" className="flex min-w-0 flex-1 items-center gap-1.5" aria-label="Aval Angadi Home">
+                <img src={AvalAngadiLogo} alt="Aval Angadi" className="h-11 w-12 object-contain" />
+                <span>
+                  <strong className="block whitespace-nowrap font-serif text-[18px] font-bold leading-none text-[#b5121b]">Aval Angadi</strong>
+                  <small className="mt-1 block whitespace-nowrap text-[7px] font-semibold leading-none text-neutral-500">India's Women-Led Marketplace</small>
+                </span>
+              </Link>
 
-            <form className="ml-1 flex h-9 min-w-0 flex-1 items-center rounded-full border border-neutral-300 bg-white px-3" onSubmit={(event) => event.preventDefault()}>
-              <Search size={16} className="shrink-0 text-neutral-500" />
-              <input type="search" aria-label="Search products" placeholder="Search products..." className="min-w-0 flex-1 bg-transparent px-2 text-[10px] outline-none" />
+              <Link to="/wishlist" aria-label="Wishlist" className="relative shrink-0 text-[#172d20]"><Heart size={28} strokeWidth={1.55} /><span className="absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#c71320] px-1 text-[8px] font-bold text-white">2</span></Link>
+              <Link to="/cart" aria-label="Cart" className="relative shrink-0 text-[#172d20]"><ShoppingCart size={30} strokeWidth={1.55} /><span className="absolute -right-2 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#c71320] px-1 text-[8px] font-bold text-white">2</span></Link>
+            </div>
+
+            <form className="mt-2 flex h-10 items-center rounded-full border border-[#e2e2e2] bg-[#f5f5f5] px-4" onSubmit={(event) => event.preventDefault()}>
+              <Search size={22} strokeWidth={2} className="shrink-0 text-black" />
+              <input type="search" aria-label="Search products" placeholder="Search for products, brands and more..." className="min-w-0 flex-1 bg-transparent px-3 text-[12px] outline-none placeholder:text-neutral-400" />
             </form>
-
-            <Link to="/wishlist" aria-label="Wishlist" className="shrink-0 text-[#24452e]"><Heart size={23} /></Link>
-            <Link to="/cart" aria-label="Cart" className="relative shrink-0 text-[#24452e]">
-              <ShoppingCart size={24} />
-              <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#c71320] px-1 text-[9px] font-bold text-white">0</span>
-            </Link>
           </div>
 
           <div className="mx-auto hidden min-h-[92px] w-full max-w-[1440px] items-center gap-4 px-4 sm:px-6 lg:flex lg:gap-6 lg:px-8">

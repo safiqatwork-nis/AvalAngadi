@@ -6,18 +6,14 @@ import TopSellingProducts from './sections/TopSellingProducts'
 import Testimonials from './sections/Testimonials'
 import TrustStats from './sections/TrustStats'
 import WhyChooseUs from './sections/WhyChooseUs'
+import ProductsPromo from '../products/ProductsPromo'
 
 function Home() {
   return (
     <main>
       <TopSellingProducts />
-      <NewArrivals />
-      <PromoHighlights />
-      <WhyChooseUs />
-      <ImpactHighlights />
-      <TrustStats />
-      <Testimonials />
-      <NewsletterSection />
+      <div className="sm:hidden"><ProductsPromo /></div>
+      <div className="hidden sm:block"><NewArrivals /><PromoHighlights /><WhyChooseUs /><ImpactHighlights /><TrustStats /><Testimonials /><NewsletterSection /></div>
     </main>
   )
 }

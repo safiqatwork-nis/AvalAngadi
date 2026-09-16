@@ -16,8 +16,9 @@ function MainLayout({ children }) {
     <div className="flex min-h-screen flex-col bg-neutral-50 pb-[66px] lg:pb-0">
       <Header />
       {pathname === '/' && <HeroSection />}
+      {pathname === '/shop' && <HeroSection variant="products" showCategories={false} />}
       <div className="flex-1">{children}</div>
-      <Footer />
+      <div className="hidden lg:block"><Footer /></div>
       <MobileBottomNav />
     </div>
   )
