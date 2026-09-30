@@ -12,14 +12,44 @@ function MainLayout({ children }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [pathname, search])
 
+  useEffect(() => {
+    const animatedNodes = document.querySelectorAll(
+      'section, article, li, .product-card, .category-card, .testimonial-card, .stat-card, .newsletter, .info-card, .feature-card, [data-animate]'
+    )
+
+    if (!animatedNodes.length) {
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.18, rootMargin: '0px 0px 0% 0px' }
+    )
+
+    animatedNodes.forEach((node, index) => {
+      node.classList.add('reveal')
+      node.style.transitionDelay = `${index * 20}ms`
+      observer.observe(node)
+    })
+
+    return () => observer.disconnect()
+  }, [pathname, search])
+
   return (
-    <div className="flex min-h-screen flex-col bg-neutral-50 pb-[66px] lg:pb-0">
-      <Header />
+    <div className={`flex min-h-screen flex-col bg-neutral-50 ${['/admin', '/vendor'].includes(pathname) ? '' : 'pb-[66px] lg:pb-0'}`}>
+      {!['/admin', '/vendor'].includes(pathname) && <Header />}
       {pathname === '/' && <HeroSection />}
       {pathname === '/shop' && <HeroSection variant="products" showCategories={false} />}
-      <div className="flex-1">{children}</div>
-      <div className="hidden lg:block"><Footer /></div>
-      <MobileBottomNav />
+      <div key={`${pathname}${search}`} className="route-animate flex-1">{children}</div>
+      {!['/admin', '/vendor'].includes(pathname) && <div className="hidden lg:block"><Footer /></div>}
+      {!['/admin', '/vendor'].includes(pathname) && <MobileBottomNav />}
     </div>
   )
 }

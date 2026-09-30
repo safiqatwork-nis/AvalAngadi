@@ -1,0 +1,117 @@
+/* Visual skin only: the Admin data, pages, and actions remain unchanged. */
+.admin-app{background:#fbfbfd;color:#18213a}.admin-app .aa-sidebar{width:238px;border-right:1px solid #ededf3;background:#fff;padding:20px 14px}.admin-app .admin-main{margin-left:238px}.admin-app .aa-brand{gap:11px;padding:0 10px 31px;color:#6530d8}.admin-app .aa-brand>img{width:38px;height:38px}.admin-app .aa-brand strong{color:#6530d8;font-size:19px;letter-spacing:.5px}.admin-app .aa-brand small{color:#4f586b;font-size:10px}.admin-app .aa-sidebar nav button,.admin-app .aa-sidebar nav button:not(.active){min-height:39px;padding:9px 12px!important;color:#25304a;font-size:12px!important}.admin-app .aa-sidebar nav button.active,.admin-app .aa-sidebar nav button:hover{border-left:0;border-radius:7px;background:#f1ebff;color:#6833dc;padding-left:12px!important}.admin-app .aa-sidebar nav button svg{width:18px;height:18px}.admin-app .aa-logout{color:#25304a}.admin-app .aa-header{min-height:70px;border-bottom:1px solid #efeff4;padding:12px 20px}.admin-app .admin-search{height:38px;max-width:385px;border-color:#e7e7ee;border-radius:8px;background:#fafafd}.admin-app .aa-account{color:#242c40}.admin-app .aa-content{max-width:1500px;padding:15px 18px 35px}.admin-app .aa-panel,.admin-app .aa-stat{border:1px solid #ececf2;box-shadow:0 3px 13px #242a4006}.admin-app .aa-stat{border-radius:11px;padding:15px;gap:12px}.admin-app .aa-stat i{width:40px;height:40px;border-radius:12px}.admin-app .aa-stat i.blue{background:#f1e9ff;color:#7139e5}.admin-app .aa-stat i.cyan{background:#e5f0ff;color:#287cef}.admin-app .aa-stat i.green{background:#e3f8ed;color:#21ac67}.admin-app .aa-stat i.yellow{background:#fff0e2;color:#fb821f}.admin-app .aa-stat i.red{background:#ffedf3;color:#ef6692}.admin-app .aa-stat span{font-size:10px;text-transform:none}.admin-app .aa-stat strong{font-size:21px}.admin-app .aa-panel{border-radius:11px}.admin-app .aa-panel>header{min-height:44px;padding:0 18px}.admin-app .aa-panel h1,.admin-app .aa-panel h2{font-size:14px}.admin-app .aa-panel h1{font-size:16px}.admin-app .aa-panel header p{font-size:11px}.admin-app .aa-pipeline{gap:12px;padding:15px}.admin-app .aa-pipeline article{border-radius:10px;padding:13px;font-size:11px}.admin-app .aa-pipeline i{width:35px;height:35px;border-radius:10px;font-size:19px}.admin-app .aa-pipeline strong{font-size:20px}.admin-app .aa-dashboard-grid{gap:15px;margin-top:15px}.admin-app .aa-three{gap:15px;margin-top:15px}.admin-app .aa-sales header h2{font-size:23px}.admin-app .aa-chart{padding:14px 25px}.admin-app .aa-chart svg{height:210px}.admin-app .aa-mix{width:215px;height:215px}.admin-app .aa-mix:after{width:125px;height:125px;margin:45px}.admin-app .aa-table th{background:#7139e5;font-size:10px}.admin-app .aa-table td{font-size:11px}.admin-app .aa-status.active,.admin-app .aa-status.delivered,.admin-app .aa-status.approved{background:#e3f7eb;color:#20a866}.admin-app .aa-status.pending{background:#fff1dc;color:#dd811e}.admin-app .aa-status.shipping{background:#e7efff;color:#2876dc}.admin-app .aa-hero{border-radius:11px;background:linear-gradient(105deg,#7139e5,#4520a4);padding:25px 30px}.admin-app .aa-hero button{color:#6331d9}.admin-app .aa-category-form button,.admin-app .aa-list header button{background:#7139e5}.admin-app .aa-edit{background:#7a42e4}.admin-app .aa-view{background:#33205f}.admin-app .aa-approve{background:#32b86e}.admin-app .aa-page-title{color:#6f7789}
+@media(max-width:900px){.admin-app .aa-sidebar{width:238px}.admin-app .admin-main{margin-left:238px}}
+@media(max-width:600px){.admin-app .aa-sidebar{display:none}.admin-app .admin-main{margin-left:0}.admin-app .aa-content{padding:12px}.admin-app .aa-stats{grid-template-columns:repeat(2,1fr)}.admin-app .aa-stat{padding:12px}.admin-app .aa-stat i{width:34px;height:34px}.admin-app .aa-pipeline{grid-template-columns:1fr}.admin-app .admin-search{max-width:none}}
+
+/* Replace the dashboard line graph with a compact sales insight summary. */
+.admin-app .aa-sales .aa-chart{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;align-items:stretch;min-height:230px;padding:20px 24px;background:linear-gradient(135deg,#fbfaff,#f5f1ff);text-align:left}
+.admin-app .aa-sales .aa-chart svg,.admin-app .aa-sales .aa-chart>div{display:none}
+.admin-app .aa-sales .aa-chart:before,.admin-app .aa-sales .aa-chart:after{display:block;border:1px solid #e8e0ff;border-radius:12px;background:#fff;padding:18px;color:#555d70;font:12px/1.7 Inter,sans-serif;white-space:pre-line}
+.admin-app .aa-sales .aa-chart:before{grid-row:span 2;background:linear-gradient(135deg,#7139e5,#5126b4);border:0;color:#fff;content:'2026 Sales Summary\A\A₹ 1,403,163.30\APaid sales this year\A\A₹ 6,368,649.86\AAll order value\A\A18.6% ↑ from last year'}
+.admin-app .aa-sales .aa-chart:after{content:'Best sales month\A\AJuly\A\A₹ 4,180,000\A\AHighest completed order volume'}
+.admin-app .aa-sales .aa-chart{position:relative}
+.admin-app .aa-sales .aa-chart::marker{display:none}
+.admin-app .aa-sales .aa-chart:has(svg):not(:empty){ }
+.admin-app .aa-sales .aa-chart::after{box-shadow:0 5px 12px #5d39a013}
+.admin-app .aa-sales .aa-chart{background-image:linear-gradient(135deg,#fbfaff,#f5f1ff)}
+.admin-app .aa-sales .aa-chart:before{box-shadow:0 10px 25px #6835d536}
+@media(max-width:600px){.admin-app .aa-sales .aa-chart{grid-template-columns:1fr;min-height:auto;padding:14px}.admin-app .aa-sales .aa-chart:before{grid-row:auto}}
+
+/* Alternate layout: operational snapshot in place of the graph. */
+.admin-app .aa-sales .aa-chart{grid-template-columns:1fr 1fr;min-height:245px;gap:18px;background:#fff;padding:22px}
+.admin-app .aa-sales .aa-chart:before,.admin-app .aa-sales .aa-chart:after{display:block;grid-row:auto;margin:0;border:0;border-radius:14px;padding:22px;box-shadow:none;white-space:pre-line}
+.admin-app .aa-sales .aa-chart:before{background:linear-gradient(135deg,#25124f,#7139e5);content:'Marketplace pulse\A\A₹ 1,403,163.30\A\APaid sales in 2026\A\A79 total orders     16 active vendors\A\A18.6% ↑ growth this year';font-size:13px;line-height:1.65}
+.admin-app .aa-sales .aa-chart:after{border:1px solid #eeeaf8;background:linear-gradient(180deg,#fbfaff,#f7f4ff);color:#3f4660;content:'Order fulfilment\A\A57  Pending / placed\A\A  9  Shipping\A\A  9  Delivered\A\A23  Payments received';font-weight:600;font-size:13px;line-height:1.7}
+@media(max-width:600px){.admin-app .aa-sales .aa-chart{grid-template-columns:1fr}.admin-app .aa-sales .aa-chart:before,.admin-app .aa-sales .aa-chart:after{padding:18px}}
+
+/* Full alternate dashboard row: operations centre + marketplace health. */
+.admin-app .aa-dashboard-grid{grid-template-columns:1.25fr .75fr;min-height:300px;border-radius:16px;background:linear-gradient(135deg,#f7f3ff,#f9fbff);padding:20px}
+.admin-app .aa-dashboard-grid>.aa-panel{display:none}
+.admin-app .aa-dashboard-grid:before,.admin-app .aa-dashboard-grid:after{display:block;border-radius:15px;content:''}
+.admin-app .aa-dashboard-grid:before{background:radial-gradient(circle at 90% 15%,#a98bff55 0 10%,transparent 11%),linear-gradient(135deg,#2e1367,#6531d8);box-shadow:0 12px 30px #6230d72a;content:'OPERATIONS CENTRE   ·   ₹ 1,403,163.30 PAID SALES   ·   79 ORDERS   ·   57 AWAITING FULFILMENT   ·   23 PAYMENTS RECEIVED   ·   16 ACTIVE VENDORS   ·   40 CUSTOMERS';color:#fff;padding:32px;font:700 16px/1.8 Inter,sans-serif}
+.admin-app .aa-dashboard-grid:after{border:1px solid #ece7fa;background:#fff;box-shadow:0 8px 25px #3a285a0b;content:'MARKETPLACE HEALTH   ·   16 ACTIVE VENDORS   ·   16 STORES ONLINE   ·   40 CUSTOMERS SHOPPING   ·   9 ORDERS DELIVERED';color:#343b51;padding:30px;font:700 16px/1.9 Inter,sans-serif}
+@media(max-width:900px){.admin-app .aa-dashboard-grid{grid-template-columns:1fr;min-height:auto}.admin-app .aa-dashboard-grid:before,.admin-app .aa-dashboard-grid:after{min-height:220px}}
+@media(max-width:600px){.admin-app .aa-dashboard-grid{padding:12px}.admin-app .aa-dashboard-grid:before,.admin-app .aa-dashboard-grid:after{padding:22px;font-size:14px}}
+
+/* Dashboard split: turn the two panels back into real, readable surfaces. */
+.admin-app .aa-dashboard-grid{grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);gap:16px;min-height:0;padding:0;background:transparent}
+.admin-app .aa-dashboard-grid>.aa-panel{display:block;min-width:0;overflow:hidden}
+.admin-app .aa-dashboard-grid:before,.admin-app .aa-dashboard-grid:after{display:none}
+.admin-app .aa-dashboard-grid .aa-panel>header{padding:0}
+.admin-app .aa-sales{padding:26px;background:linear-gradient(135deg,#211045 0%,#4a1da7 58%,#7438df 100%);border:0;color:#fff;box-shadow:0 15px 30px #5421b52e}
+.admin-app .aa-sales>header{display:none}
+.admin-app .aa-sales .aa-chart{display:none}
+.admin-app .aa-operations-heading,.admin-app .aa-health-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.admin-app .aa-kicker{display:block;margin-bottom:12px;color:#a9e6d2;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.admin-app .aa-operations-heading h2,.admin-app .aa-health-heading h2{margin:0;font-size:25px;line-height:1.15;letter-spacing:-.3px}
+.admin-app .aa-operations-heading p{margin:8px 0 0;color:#d7c9f5;font-size:12px}
+.admin-app .aa-live-badge{display:flex;align-items:center;gap:6px;border:1px solid #ffffff33;border-radius:20px;padding:6px 10px;color:#fff;font-size:10px;font-weight:700}
+.admin-app .aa-live-badge i{width:6px;height:6px;border-radius:50%;background:#70e0ae;box-shadow:0 0 0 4px #70e0ae22}
+.admin-app .aa-operations-total{margin:34px 0 26px;padding-bottom:20px;border-bottom:1px solid #ffffff26}
+.admin-app .aa-operations-total span,.admin-app .aa-operations-total small{display:block;color:#d7c9f5;font-size:11px}
+.admin-app .aa-operations-total strong{display:block;margin:7px 0 5px;font-size:30px;letter-spacing:-.5px}
+.admin-app .aa-operations-total small{color:#8de0bf}
+.admin-app .aa-operations-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.admin-app .aa-operations-metrics div{padding:12px;border:1px solid #ffffff1c;border-radius:10px;background:#ffffff0d}
+.admin-app .aa-operations-metrics b,.admin-app .aa-operations-metrics span{display:block}
+.admin-app .aa-operations-metrics b{font-size:21px}.admin-app .aa-operations-metrics span{margin-top:4px;color:#d7c9f5;font-size:10px;line-height:1.35}
+.admin-app .aa-operations-footer{margin-top:24px;color:#d7c9f5;font-size:11px}.admin-app .aa-operations-footer strong{float:right;color:#fff}
+.admin-app .aa-operations-footer>div{clear:both;height:6px;margin-top:9px;border-radius:10px;background:#ffffff26}.admin-app .aa-operations-footer i{display:block;height:100%;border-radius:inherit;background:#71dfb0}
+.admin-app .aa-platform{padding:26px;background:#fff;border:1px solid #e9e4f6;box-shadow:0 12px 25px #4630640a}
+.admin-app .aa-health-heading h2{color:#252d43;font-size:21px}.admin-app .aa-health-heading .aa-kicker{color:#7139e5}
+.admin-app .aa-health-score{color:#21ac67;font-size:25px;font-weight:800}.admin-app .aa-health-score span{color:#9aa1b0;font-size:11px;font-weight:600}
+.admin-app .aa-health-list{display:grid;gap:16px;margin:30px 0 24px;padding:18px 0;border-top:1px solid #f0edf5;border-bottom:1px solid #f0edf5}
+.admin-app .aa-health-list div{display:flex;align-items:center;justify-content:space-between;color:#596174;font-size:12px}.admin-app .aa-health-list span{display:flex;align-items:center;gap:9px}.admin-app .aa-health-list i{width:8px;height:8px;border-radius:50%}.admin-app .aa-health-list .green{background:#20c787}.admin-app .aa-health-list .cyan{background:#4779e8}.admin-app .aa-health-list .yellow{background:#f5b942}.admin-app .aa-health-list .blue{background:#9a68ed}.admin-app .aa-health-list strong{color:#252d43;font-size:14px}
+.admin-app .aa-health-note{padding:14px;border-radius:10px;background:#f5f1ff}.admin-app .aa-health-note span,.admin-app .aa-health-note small{display:block;color:#7b8190;font-size:10px}.admin-app .aa-health-note strong{display:block;margin:5px 0;color:#4e28a2;font-size:12px}
+@media(max-width:900px){.admin-app .aa-dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.admin-app .aa-sales,.admin-app .aa-platform{padding:20px}.admin-app .aa-operations-heading h2,.admin-app .aa-health-heading h2{font-size:20px}.admin-app .aa-operations-metrics{gap:7px}.admin-app .aa-operations-metrics div{padding:9px 7px}}
+
+/* The dashboard source keeps these panels data-driven; this layer gives each one a distinct summary composition. */
+.admin-app .aa-sales>header,.admin-app .aa-sales .aa-chart,.admin-app .aa-platform>header,.admin-app .aa-platform .aa-mix,.admin-app .aa-platform>p{display:none}
+.admin-app .aa-sales:before,.admin-app .aa-platform:before{display:block;white-space:pre-line}
+.admin-app .aa-sales:before{content:'OPERATIONS CENTRE\A\AKeep every order moving.\A\A₹ 1,403,163.30\A Paid sales this year\A\A79     Total orders\A57     Awaiting fulfilment\A23     Payments received\A\A FULFILMENT PROGRESS                                      28%';color:#fff;padding:4px;font-size:13px;line-height:1.8}
+.admin-app .aa-platform:before{content:'MARKETPLACE HEALTH                              92/100\A\AReady for the next sale.\A\A●  Active vendors                                      16\A●  Stores online                                      16\A●  Customers shopping                                40\A●  Orders delivered                                    9\A\A NEXT BEST ACTION\AReview 4 packing orders';color:#252d43;padding:4px;font-size:13px;line-height:1.85}
+.admin-app .aa-sales:after{position:absolute;right:32px;top:28px;width:8px;height:8px;border-radius:50%;background:#70e0ae;box-shadow:0 0 0 5px #70e0ae22;content:''}
+.admin-app .aa-sales,.admin-app .aa-platform{position:relative}
+@media(max-width:600px){.admin-app .aa-sales:before,.admin-app .aa-platform:before{font-size:12px;line-height:1.75}.admin-app .aa-sales:after{right:24px;top:24px}}
+
+/* Make the dashboard genuinely visual: restore the data SVG and turn the mix into a donut chart. */
+.admin-app .aa-sales:before{margin-bottom:20px;padding-right:80px;font-size:12px;line-height:1.65}
+.admin-app .aa-sales .aa-chart{display:block;min-height:0;margin:0 -4px;padding:14px 0 0;background:repeating-linear-gradient(to bottom,transparent 0,transparent 42px,#ffffff18 43px);border-top:1px solid #ffffff26;text-align:left}
+.admin-app .aa-sales .aa-chart svg{display:block;width:100%;height:148px;overflow:visible}
+.admin-app .aa-sales .aa-chart svg path:nth-child(1){stroke:#ffffff;filter:drop-shadow(0 4px 5px #1a0b3988)}
+.admin-app .aa-sales .aa-chart svg path:nth-child(2){stroke:#79e2b3}
+.admin-app .aa-sales .aa-chart svg path:nth-child(3){fill:#f7c95633;stroke:#f7c956;stroke-width:2}
+.admin-app .aa-sales .aa-chart>div{display:block;margin-top:2px;color:#cdbbed;font-size:9px;letter-spacing:.15px;word-spacing:4px;text-align:justify}
+.admin-app .aa-platform:before{display:none}
+.admin-app .aa-platform .aa-mix{display:grid;place-items:center;width:148px;height:148px;margin:26px auto 20px;border-radius:50%;background:conic-gradient(#20c787 0 42%,#4779e8 42% 68%,#f5b942 68% 94%,#ececf2 94% 100%);position:relative}
+.admin-app .aa-platform .aa-mix:after{display:grid;place-items:center;width:94px;height:94px;border-radius:50%;background:#fff;color:#252d43;content:'92%\A health';white-space:pre;text-align:center;font-size:16px;font-weight:800;line-height:1.35}
+.admin-app .aa-platform>p{display:block;margin:0;color:#596174;font-size:11px;line-height:2;text-align:center}
+.admin-app .aa-platform>p i{display:inline-block;width:7px;height:7px;margin-right:4px;border-radius:50%}
+.admin-app .aa-platform>p .green{background:#20c787}.admin-app .aa-platform>p .cyan{background:#4779e8}.admin-app .aa-platform>p .yellow{background:#f5b942}
+@media(max-width:600px){.admin-app .aa-sales .aa-chart svg{height:125px}.admin-app .aa-platform .aa-mix{width:128px;height:128px}.admin-app .aa-platform .aa-mix:after{width:82px;height:82px}}
+
+/* Performance cockpit: a lighter chart-led alternative to the old purple summary cards. */
+.admin-app .aa-dashboard-grid{grid-template-columns:minmax(0,1.55fr) minmax(310px,.75fr);gap:18px}
+.admin-app .aa-dashboard-grid>.aa-panel{border:1px solid #e8e5df;border-radius:18px}
+.admin-app .aa-sales{padding:24px 26px 20px;background:#fbfaf7;color:#253047;box-shadow:0 10px 28px #2830470c}
+.admin-app .aa-sales:before,.admin-app .aa-sales:after,.admin-app .aa-platform:before{display:none}
+.admin-app .aa-sales>header.aa-chart-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:0}
+.admin-app .aa-eyebrow{display:block;margin-bottom:8px;color:#929083;font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+.admin-app .aa-chart-header h2{margin:0;color:#1c2740;font-size:28px;letter-spacing:-.7px}
+.admin-app .aa-chart-header p{margin:5px 0 0;color:#7b8190;font-size:12px}
+.admin-app .aa-chart-header select{border:1px solid #e2ded4;border-radius:8px;background:#fff;padding:8px 26px 8px 10px;color:#4a5263;font:600 11px inherit}
+.admin-app .aa-chart-legend{display:flex;gap:18px;margin:24px 0 12px;color:#717786;font-size:10px}.admin-app .aa-chart-legend span{display:flex;align-items:center;gap:6px}.admin-app .aa-chart-legend i{width:8px;height:8px;border-radius:50%}.admin-app .aa-chart-legend .paid{background:#7355d7}.admin-app .aa-chart-legend .orders{background:#22b985}.admin-app .aa-chart-legend .pending{background:#efb943}
+.admin-app .aa-sales .aa-chart{display:block;min-height:0;margin:0;padding:12px 0 0;border-top:1px solid #ece9e1;background:repeating-linear-gradient(to bottom,transparent 0,transparent 42px,#ebe8e0 43px);text-align:left}
+.admin-app .aa-sales .aa-chart svg{display:block;width:100%;height:178px;overflow:visible}.admin-app .aa-sales .aa-chart svg path:nth-child(1){stroke:#7355d7;filter:none}.admin-app .aa-sales .aa-chart svg path:nth-child(2){stroke:#22b985}.admin-app .aa-sales .aa-chart svg path:nth-child(3){fill:#efb94333;stroke:#efb943;stroke-width:2}
+.admin-app .aa-sales .aa-chart>div{display:block;margin-top:4px;color:#9a9b98;font-size:9px;letter-spacing:.1px;word-spacing:5px;text-align:justify}
+.admin-app .aa-chart-summary{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid #e9e6de}.admin-app .aa-chart-summary div{display:grid;gap:5px}.admin-app .aa-chart-summary span{color:#8b8c87;font-size:10px}.admin-app .aa-chart-summary strong{color:#29334a;font-size:12px}.admin-app .aa-chart-summary .positive{color:#179666}
+.admin-app .aa-platform{padding:24px 24px 18px;background:#fff;border-color:#e8e5df;box-shadow:0 10px 28px #2830470c}.admin-app .aa-platform>header.aa-platform-header{display:flex;align-items:flex-start;justify-content:space-between;padding:0}.admin-app .aa-platform-header h2{margin:0;color:#253047;font-size:20px}.admin-app .aa-platform-header>strong{color:#179666;font-size:24px}
+.admin-app .aa-platform .aa-mix{display:grid;place-items:center;width:152px;height:152px;margin:24px auto 22px;border-radius:50%;background:conic-gradient(#22b985 0 44%,#7355d7 44% 70%,#efb943 70% 92%,#edf0f1 92% 100%);position:relative}.admin-app .aa-platform .aa-mix:after{display:grid;place-items:center;width:96px;height:96px;border-radius:50%;background:#fff;color:#253047;content:'92%\Ahealthy';white-space:pre;text-align:center;font-size:16px;font-weight:800;line-height:1.35}
+.admin-app .aa-platform .aa-platform-stats{display:grid;gap:14px}.admin-app .aa-platform-stats>div{display:grid;grid-template-columns:1fr auto;gap:7px;align-items:center;color:#636b79;font-size:11px}.admin-app .aa-platform-stats span{display:flex;align-items:center;gap:7px}.admin-app .aa-platform-stats span>i{width:7px;height:7px;border-radius:50%}.admin-app .aa-platform-stats .green{background:#22b985}.admin-app .aa-platform-stats .cyan{background:#7355d7}.admin-app .aa-platform-stats .yellow{background:#efb943}.admin-app .aa-platform-stats b{color:#253047;font-size:12px}.admin-app .aa-platform-stats em{grid-column:1 / -1;height:5px;border-radius:9px;background:#eef0ed}.admin-app .aa-platform-stats em i{display:block;height:100%;border-radius:inherit;background:#22b985}.admin-app .aa-platform-stats>div:nth-child(2) em i,.admin-app .aa-platform-stats>div:nth-child(3) em i{background:#7355d7}
+.admin-app .aa-platform-footer{display:flex;justify-content:space-between;margin-top:22px;padding-top:14px;border-top:1px solid #eeeae2;color:#8a8d91;font-size:10px}.admin-app .aa-platform-footer strong{color:#253047}
+@media(max-width:900px){.admin-app .aa-dashboard-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.admin-app .aa-sales,.admin-app .aa-platform{padding:20px}.admin-app .aa-chart-header h2{font-size:23px}.admin-app .aa-chart-legend{gap:10px}.admin-app .aa-chart-summary{gap:6px}.admin-app .aa-chart-summary strong{font-size:10px}.admin-app .aa-sales .aa-chart svg{height:140px}}
+
+/* Remove legacy generated copy from the chart surface. */
+.admin-app .aa-sales .aa-chart::before,.admin-app .aa-sales .aa-chart::after{display:none!important;content:none!important}

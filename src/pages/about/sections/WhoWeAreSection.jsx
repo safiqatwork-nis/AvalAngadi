@@ -1,0 +1,14 @@
+import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import leafPair from '../../../assets/decorations/leaf-pair.png'
+import oliveBranch from '../../../assets/decorations/olive-branch.png'
+import storyImage from '../../../assets/about/our-story.png'
+import whoImage from '../../../assets/about/who-we-are.png'
+import SectionLabel from './SectionLabel'
+
+export default function WhoWeAreSection() {
+  return <section className="relative mx-3 mt-3 rounded-xl border border-[#e7eadc] py-9 sm:py-4 lg:mx-0 lg:mt-0 lg:rounded-none lg:border-0 lg:py-20">
+    <img src={oliveBranch} alt="" aria-hidden="true" className="pointer-events-none absolute -left-7 top-10 h-28 w-28 -rotate-[18deg] object-contain opacity-35 sm:-left-10 sm:top-12 sm:h-20 sm:w-20 lg:-left-7 lg:top-20 lg:h-44 lg:w-44 lg:opacity-60" />
+    <div className="mx-auto grid max-w-[1360px] items-center gap-7 px-5 sm:grid-cols-[0.86fr_1.05fr_0.48fr] sm:gap-4 sm:px-5 lg:grid-cols-[0.85fr_1.18fr_0.42fr] lg:gap-10 lg:px-8"><div><SectionLabel>Who We Are</SectionLabel><h2 className="font-['Georgia'] text-[30px] font-bold text-[#193b20] sm:text-[27px] lg:text-[40px]">Who We Are</h2><p className="mt-3 text-[14px] leading-5 text-neutral-600 sm:mt-2 sm:text-[12px] sm:leading-[17px] lg:mt-5 lg:text-[18px] lg:leading-8">Aval Angadi is a women-led marketplace bringing together the best of natural, chemical-free and handcrafted products from passionate makers across India.</p><p className="mt-3 hidden text-[14px] leading-5 text-neutral-600 lg:block lg:text-[18px] lg:leading-8">Our mission is to promote healthy living, support sustainable practices and empower local communities through the power of tradition.</p><Link to="/shop" className="mt-4 inline-flex items-center gap-3 rounded-md bg-[#2f5c20] px-5 py-2.5 text-[12px] font-bold text-white transition hover:bg-[#244819] sm:mt-2 sm:px-4 sm:py-2 sm:text-[11px] lg:mt-7 lg:px-7 lg:py-3.5 lg:text-[15px]">Learn More <ArrowRight size={16} /></Link></div><div className="relative"><img src={storyImage} alt="Woman artisan preparing traditional herbs" className="h-[230px] w-full rounded-[35px_75px_35px_75px] object-cover shadow-sm sm:h-[165px] lg:hidden" /><img src={whoImage} alt="Traditional natural ingredients with mortar and pestle" className="hidden h-[410px] w-full rounded-[35px_95px_35px_95px] object-cover shadow-sm lg:block" /></div><div className="relative mx-auto flex min-h-[190px] w-[150px] items-center justify-center rounded-[43%_57%_48%_52%/55%_42%_58%_45%] bg-[#edf2df] px-4 text-center font-['Georgia'] text-[20px] italic leading-[1.4] text-[#48613f] sm:min-h-[150px] sm:w-full sm:text-[17px] lg:min-h-[270px] lg:text-[28px]"><p>People<br />Tradition<br />Nature<br />Together</p><img src={leafPair} alt="" aria-hidden="true" className="pointer-events-none absolute -bottom-12 left-1/2 h-20 w-20 -translate-x-1/2 object-contain" /></div></div>
+  </section>
+}

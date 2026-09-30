@@ -1,0 +1,61 @@
+@media (min-width:601px) and (max-width:900px){
+  .admin-app .aa-sidebar{width:238px;padding:21px 14px}
+  .admin-app .aa-sidebar .aa-brand{justify-content:flex-start;padding:8px 12px 33px}
+  .admin-app .aa-sidebar .aa-brand>span:last-child{display:block}
+  .admin-app .aa-sidebar nav{gap:3px}
+  .admin-app .aa-sidebar nav button,.admin-app .aa-sidebar nav button:not(.active){justify-content:flex-start;width:100%;padding:13px 14px;font-size:13px}
+  .admin-app .aa-sidebar nav button.active{padding-left:10px}
+  .admin-app .aa-sidebar .aa-logout{justify-content:flex-start;padding:12px;font-size:13px}
+  .admin-app .admin-main{margin-left:238px}
+}
+
+@media (max-width:600px){
+  .admin-app .aa-sidebar{display:none}
+  .admin-app .admin-main{margin-left:0}
+}
+
+/* Keep the Admin navigation aligned even when it inherits storefront breakpoints. */
+.admin-app .aa-sidebar{
+  overflow:hidden;
+}
+
+.admin-app .aa-sidebar nav{
+  display:flex !important;
+  min-height:0;
+  flex:1;
+  flex-direction:column;
+  gap:3px;
+  overflow-x:hidden;
+  overflow-y:auto;
+  padding-right:3px;
+  scrollbar-width:thin;
+  scrollbar-color:#9aa7bb transparent;
+}
+
+.admin-app .aa-sidebar nav button,
+.admin-app .aa-sidebar nav button:not(.active){
+  display:flex !important;
+  flex:0 0 auto;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:13px !important;
+  min-height:46px;
+  padding:11px 14px !important;
+  color:#384152;
+  font-size:13px !important;
+  line-height:1.2;
+  white-space:nowrap;
+}
+
+.admin-app .aa-sidebar nav button svg{
+  width:20px;
+  height:20px;
+  flex:0 0 20px;
+}
+
+.admin-app .aa-sidebar nav button.active{
+  padding-left:10px !important;
+}
+
+.admin-app .aa-sidebar nav::-webkit-scrollbar{width:6px}
+.admin-app .aa-sidebar nav::-webkit-scrollbar-thumb{border-radius:999px;background:#a6b1c3}

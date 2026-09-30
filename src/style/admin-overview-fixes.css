@@ -1,0 +1,2 @@
+.progress-ring{position:relative}
+.progress-ring:before{inset:20px;width:auto!important;height:auto!important}

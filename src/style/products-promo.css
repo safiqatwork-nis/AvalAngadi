@@ -1,6 +1,6 @@
 .shop-promo{container-type:inline-size;width:100%;margin-top:22px;color:#20371b}
 .shop-wellness{display:grid;grid-template-columns:31.7% 23.6% 14.3% 1fr;align-items:center;min-height:10.6cqw;background:#f4ebd9;padding-right:2.4%;gap:0}
-.shop-wellness-art{align-self:stretch;background-image:url('../../assets/shop-promo-reference.png');background-repeat:no-repeat;background-size:100cqw auto;background-position:-.4cqw -.5cqw}
+.shop-wellness-art{align-self:stretch;background-image:url('../assets/shop-promo-reference.png');background-repeat:no-repeat;background-size:100cqw auto;background-position:-.4cqw -.5cqw}
 .shop-wellness-copy{padding:1.6cqw .8cqw}
 .shop-wellness h2{position:relative;display:inline-block;margin:0;font:bold 1.9cqw/1.02 Georgia,serif;color:#152713}
 .shop-wellness h2 svg{position:absolute;right:-2.1cqw;top:.5cqw;width:1.65cqw;height:1.65cqw;transform:rotate(-20deg);color:#365628}
@@ -19,7 +19,7 @@
 .shop-service h3{font:bold 1.2cqw/1.3 Georgia,serif;margin:0;color:#233b1c}
 .shop-service p{font-size:1cqw;margin:.35cqw 0 0;color:#51554e}
 .shop-newsletter{position:relative;isolation:isolate;display:grid;grid-template-columns:42% 58%;align-items:center;min-height:8.8cqw;padding:1.25cqw 14.4% 1.25cqw 15.5%;background:#203f17;color:#fff;overflow:hidden}
-.shop-newsletter::before,.shop-newsletter::after{content:'';position:absolute;top:0;bottom:0;z-index:-1;background-image:url('../../assets/shop-promo-reference.png');background-size:100cqw auto;background-repeat:no-repeat;pointer-events:none}
+.shop-newsletter::before,.shop-newsletter::after{content:'';position:absolute;top:0;bottom:0;z-index:-1;background-image:url('../assets/shop-promo-reference.png');background-size:100cqw auto;background-repeat:no-repeat;pointer-events:none}
 .shop-newsletter::before{left:0;width:15cqw;background-position:-.4cqw -18cqw;mask-image:linear-gradient(to right,#000 75%,transparent)}
 .shop-newsletter::after{right:0;width:14cqw;background-position:right -18cqw;mask-image:linear-gradient(to left,#000 75%,transparent)}
 .shop-newsletter h2{font:bold 1.6cqw/1.03 Georgia,serif;margin:0;color:#fff}

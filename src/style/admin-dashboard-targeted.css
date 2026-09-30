@@ -1,0 +1,20 @@
+/* Only the three requested dashboard areas are restyled here. */
+.admin-app .aa-dashboard-grid{display:grid;grid-template-columns:2.1fr 1fr;gap:15px;min-height:0;border:0;border-radius:0;background:transparent;padding:0}
+.admin-app .aa-dashboard-grid>.aa-panel{display:block}
+
+/* aa-chart: replace the graph with a compact sales snapshot. */
+.admin-app .aa-sales .aa-chart{display:grid;place-items:center;min-height:210px;padding:22px;border:0;background:linear-gradient(135deg,#faf8ff,#f4efff);text-align:center}
+.admin-app .aa-sales .aa-chart svg,.admin-app .aa-sales .aa-chart>div{display:none}
+.admin-app .aa-sales .aa-chart:before{display:block;max-width:680px;border:1px solid #e5dcff;border-radius:14px;background:#fff;padding:24px;color:#4b397c;font:700 17px/2 Inter,sans-serif;content:'₹ 1,403,163.30   ·   Paid sales in 2026     |     ₹ 6,368,649.86   ·   All order value     |     ₹ 4,965,486.56   ·   Pending payments'}
+.admin-app .aa-sales .aa-chart:after{display:block;margin-top:14px;color:#746c87;font:600 11px Inter,sans-serif;content:'Sales figures are updated from completed and pending orders.'}
+
+/* aa-platform / aa-mix: replace the donut with marketplace status cards. */
+.admin-app .aa-platform{display:flex!important;flex-direction:column}
+.admin-app .aa-platform .aa-mix{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;width:auto;height:auto;margin:22px 18px 12px;border-radius:0;background:transparent}
+.admin-app .aa-platform .aa-mix:after{display:none}
+.admin-app .aa-platform .aa-mix:before{grid-column:1/-1;color:#7a8295;font:700 10px Inter,sans-serif;letter-spacing:.08em;content:'MARKETPLACE COVERAGE'}
+.admin-app .aa-platform .aa-mix{font-size:0}
+.admin-app .aa-platform .aa-mix{background:linear-gradient(#def7ea,#def7ea) 0 22px/31% 78px no-repeat,linear-gradient(#e7efff,#e7efff) 50% 22px/31% 78px no-repeat,linear-gradient(#fff1df,#fff1df) 100% 22px/31% 78px no-repeat}
+.admin-app .aa-platform .aa-mix:after{content:''}
+.admin-app .aa-platform>p{margin-top:auto;padding:0 20px 22px;color:#566076;font-size:11px}.admin-app .aa-platform>p i{width:9px;height:9px;border-radius:50%}
+@media(max-width:900px){.admin-app .aa-dashboard-grid{grid-template-columns:1fr}.admin-app .aa-sales .aa-chart:before{font-size:14px}}

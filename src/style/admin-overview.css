@@ -1,0 +1,321 @@
+.overview {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 30px 50px;
+  color: #1e2944;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+.overview-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #f2ecff, #f8f6ff 60%, #eae2ff);
+  padding: 30px 34px;
+}
+.overview-hero p,
+.overview header > div > p,
+.overview-progress > header > p {
+  margin: 0;
+  color: #7644de;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.overview-hero h1 {
+  margin: 8px 0;
+  color: #2b1b5a;
+  font-size: 27px;
+  letter-spacing: -0.7px;
+}
+.overview-hero span {
+  color: #68718b;
+  font-size: 13px;
+}
+.overview-hero button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 8px;
+  background: #6531d8;
+  padding: 12px 16px;
+  color: #fff;
+  font: 700 12px inherit;
+}
+.overview-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 18px 0;
+}
+.overview-kpis article {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #ececf4;
+  border-radius: 13px;
+  background: #fff;
+  padding: 18px;
+}
+.overview-kpis article > span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+.overview-kpis .red {
+  background: #f0e9ff;
+  color: #ff0000;
+}
+.overview-kpis .green {
+  background: #e4f8ed;
+  color: #1fa768;
+}
+.overview-kpis .blue {
+  background: #e7efff;
+  color: #357dec;
+}
+.overview-kpis p {
+  margin: 0;
+  color: #69728a;
+  font-size: 11px;
+}
+.overview-kpis strong {
+  display: block;
+  margin: 4px 0;
+  color: #1e2944;
+  font-size: 20px;
+}
+.overview-kpis small {
+  color: #1fa768;
+  font-size: 10px;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 18px;
+}
+.overview-actions,
+.overview-progress,
+.overview-activity {
+  border: 1px solid #ececf4;
+  border-radius: 14px;
+  background: #fff;
+}
+.overview-actions header,
+.overview-activity header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeef4;
+  padding: 18px 20px;
+}
+.overview h2 {
+  margin: 4px 0 0;
+  font-size: 17px;
+  letter-spacing: -0.25px;
+}
+.overview-actions header button,
+.overview-activity header button {
+  border: 0;
+  background: transparent;
+  color: #6633d8;
+  font: 700 11px inherit;
+}
+.overview-actions > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+.overview-actions article {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-radius: 10px;
+  padding: 14px;
+}
+.overview-actions article:hover {
+  background: #faf8ff;
+}
+.overview-actions article > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+.overview-actions .orange {
+  background: #fff0e2;
+  color: #fa8120;
+}
+.overview-actions .blue {
+  background: #e5efff;
+  color: #367dea;
+}
+.overview-actions .purple {
+  background: #f1e9ff;
+  color: #7139e5;
+}
+.overview-actions .pink {
+  background: #ffedf3;
+  color: #e75e8b;
+}
+.overview-actions article p {
+  flex: 1;
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+.overview-actions article small {
+  display: block;
+  margin-top: 4px;
+  color: #8a91a2;
+  font-size: 10px;
+  font-weight: 500;
+}
+.overview-progress {
+  padding: 21px;
+}
+.overview-progress h2 {
+  font-size: 18px;
+}
+.progress-ring {
+  display: grid;
+  place-content: center;
+  width: 156px;
+  height: 156px;
+  margin: 20px auto;
+  border-radius: 50%;
+  background: conic-gradient(#7139e5 0 28%, #e8e8f1 28% 100%);
+}
+.progress-ring:before {
+  position: absolute;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background: #fff;
+  content: "";
+}
+.progress-ring strong,
+.progress-ring span {
+  z-index: 1;
+  text-align: center;
+}
+.progress-ring strong {
+  font-size: 25px;
+}
+.progress-ring span {
+  margin-top: -40px;
+  color: #778095;
+  font-size: 10px;
+}
+.progress-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.progress-legend p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: #6f778c;
+  font-size: 10px;
+}
+.progress-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.progress-legend i.pending {
+  background: #7139e5;
+}
+.progress-legend i.packing {
+  background: #fa9724;
+}
+.progress-legend i.shipping {
+  background: #397fe9;
+}
+.progress-legend i.delivered {
+  background: #22ad69;
+}
+.progress-legend b {
+  margin-left: auto;
+  color: #2d3650;
+}
+.overview-activity {
+  margin-top: 18px;
+}
+.overview-activity article {
+  display: grid;
+  grid-template-columns: 75px 12px 1fr auto;
+  gap: 13px;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f4;
+  padding: 14px 20px;
+}
+.overview-activity article:last-child {
+  border: 0;
+}
+.overview-activity time {
+  color: #858da0;
+  font-size: 10px;
+}
+.overview-activity i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #7139e5;
+}
+.overview-activity strong,
+.overview-activity span {
+  display: block;
+  font-size: 11px;
+}
+.overview-activity span {
+  margin-top: 4px;
+  color: #7f8799;
+  font-size: 10px;
+}
+.overview-activity article > b {
+  border-radius: 12px;
+  background: #f1eaff;
+  padding: 5px 9px;
+  color: #6833d8;
+  font-size: 9px;
+}
+@media (max-width: 800px) {
+  .overview {
+    padding: 20px 16px;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .overview-kpis {
+    grid-template-columns: 1fr;
+  }
+  .overview-hero {
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .overview-hero h1 {
+    font-size: 22px;
+  }
+}
+@media (max-width: 540px) {
+  .overview-hero {
+    padding: 22px;
+    flex-direction: column;
+  }
+  .overview-actions > div {
+    grid-template-columns: 1fr;
+  }
+  .overview-activity article {
+    grid-template-columns: 60px 9px 1fr;
+  }
+  .overview-activity article > b {
+    display: none;
+  }
+}
