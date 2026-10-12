@@ -1,10 +1,63 @@
-import { BadgeIndianRupee, Box, CreditCard, Eye, ShoppingBag, Users, WalletCards } from 'lucide-react'
-const stats = [[BadgeIndianRupee, 'Total Sales', '₹24,580', '18.6%', 'teal'], [ShoppingBag, 'Orders This Month', '324', '14.2%', 'mint'], [Box, 'Active Products', '128', '8.5%', 'blue'], [Users, 'Store Visitors', '8,730', '21.7%', 'gold'], [CreditCard, 'Payment Received', '₹21,350', '17.3%', 'green'], [WalletCards, 'Pending Payout', '₹3,230', 'Pending', 'orange']]
-const orders = [['#AA-5421', 'Anitha Devi', 'Moringa Leaf Powder', '₹249', 'Paid', 'Shipped'], ['#AA-5418', 'Meena Kumar', 'Raw Forest Honey', '₹449', 'Paid', 'Processing'], ['#AA-5415', 'Priya Raj', 'Hibiscus Hair Oil', '₹349', 'Paid', 'Delivered'], ['#AA-5412', 'Kavitha S', 'Amla Candy', '₹199', 'COD', 'Processing'], ['#AA-5409', 'Deepa G', 'Millet Munch', '₹199', 'Paid', 'Shipped']]
-const products = [['🍵', 'Moringa Leaf Powder', '342', '₹6,840'], ['🍯', 'Raw Forest Honey', '298', '₹5,960'], ['🌺', 'Hibiscus Hair Oil', '187', '₹3,740'], ['🥜', 'Millet Munch', '164', '₹2,624'], ['🍋', 'Amla Candy', '143', '₹2,145']]
-function Panel({ title, children, className = '' }) { return <section className={`vendor-panel ${className}`}><header><h2>{title}</h2><button type="button">View All</button></header>{children}</section> }
-export default function VendorDashboard({ activePage, query }) { const term = query.toLowerCase(); const matchingOrders = orders.filter(row => !term || row.join(' ').toLowerCase().includes(term)); const matchingProducts = products.filter(row => !term || row.join(' ').toLowerCase().includes(term)); return <main className="vendor-content"><p className="vendor-page-name">{activePage} · Nila Naturals</p><section className="vendor-stats">{stats.map(([Icon, label, value, growth, tone]) => <article key={label}><i className={tone}><Icon size={21} /></i><div><p>{label}</p><strong>{value}</strong><small className={growth === 'Pending' ? 'pending' : ''}>{growth === 'Pending' ? growth : `↑ ${growth}`}<em>{growth === 'Pending' ? 'Payouts' : 'vs last month'}</em></small></div></article>)}</section><section className="vendor-feature-grid"><Panel title="Store Performance" className="vendor-performance"><div className="vendor-tabs"><b>7 Days</b><b className="active">Monthly</b><b>Yearly</b></div><p>Total Sales</p><strong>₹24,580 <span>↑ 18.6%</span></strong><svg viewBox="0 0 630 210" role="img" aria-label="Monthly sales chart"><defs><linearGradient id="vendor-area" x1="0" y1="0" x2="0" y2="1"><stop stopColor="#079da0" stopOpacity=".25" /><stop offset="1" stopColor="#079da0" stopOpacity="0" /></linearGradient></defs><path d="M0 185 L32 170 L63 174 L95 140 L126 121 L158 110 L190 122 L221 88 L253 106 L284 78 L316 91 L348 63 L379 77 L411 102 L443 84 L474 54 L506 70 L537 104 L569 88 L600 62 L630 28 L630 210 L0 210Z" fill="url(#vendor-area)"/><path d="M0 185 L32 170 L63 174 L95 140 L126 121 L158 110 L190 122 L221 88 L253 106 L284 78 L316 91 L348 63 L379 77 L411 102 L443 84 L474 54 L506 70 L537 104 L569 88 L600 62 L630 28" fill="none" stroke="#079da0" strokeWidth="3"/></svg><div className="vendor-days"><span>May 1</span><span>May 6</span><span>May 11</span><span>May 16</span><span>May 21</span><span>May 26</span><span>May 31</span></div></Panel><section className="vendor-mini-stats">{[['◉','Order Conversion','3.42%','↑ 0.8%'],['☆','Customer Rating','4.7/5','↑ 0.2'],['♙','Return Rate','2.18%','↓ 0.6%'],['♧','Repeat Buyers','32.6%','↑ 4.3%']].map(([icon,label,value,change]) => <article key={label}><i>{icon}</i><span>{label}<strong>{value}</strong></span><b>{change}</b></article>)}</section><Panel title="Top Selling Products" className="vendor-top-products"><MiniList rows={matchingProducts} /></Panel></section><section className="vendor-mid-grid"><Panel title="Payments & Payouts" className="vendor-payouts"><div className="vendor-payment-cards"><p><i>₹</i>Total Payment Received<strong>₹21,350</strong></p><p><i>◫</i>Pending Payout<strong>₹3,230</strong></p></div><div className="vendor-payout-info"><p>▣<span>Next Payout Date<strong>Jun 5, 2026</strong></span></p><p>▣<span>Last Payout<strong>May 20, 2026<br />₹4,870</strong></span></p><p>♜<span>Payout Method<strong>Bank Transfer<br />•••• 7890</strong></span></p></div></Panel><Panel title="Recent Orders" className="vendor-orders"><OrderTable rows={matchingOrders} /></Panel><section className="vendor-side-column"><Panel title="Inventory Alerts"><AlertList rows={matchingProducts.slice(0,4)} /></Panel><Panel title="Latest Customer Reviews"><div className="vendor-reviews"><p><b>SJ</b><span><strong>Sarah Johnson</strong><i>★★★★★</i><small>Excellent product quality and fast delivery!</small></span><em>2 days ago</em></p><p><b>MK</b><span><strong>Meena Kumar</strong><i>★★★★★</i><small>The moringa powder is fresh and pure.</small></span><em>4 days ago</em></p></div></Panel></section></section><section className="vendor-bottom-grid"><DonutPanel title="Revenue by Channel" /><Panel title="Sales by Category" className="vendor-bars"><p>Organic Foods <b style={{ width: '82%' }}>₹10,240</b></p><p>Herbal Care <b style={{ width: '60%' }}>₹6,720</b></p><p>Snacks <b style={{ width: '40%' }}>₹4,360</b></p><p>Personal Care <b style={{ width: '27%' }}>₹2,260</b></p></Panel><DonutPanel title="Traffic Sources" /></section></main> }
-function MiniList({ rows }) { return <div className="vendor-list">{rows.map(([icon, name, units, amount]) => <p key={name}><b>{icon}</b><span>{name}</span><em>{units}</em><strong>{amount}</strong></p>)}</div> }
-function AlertList({ rows }) { return <div className="vendor-list vendor-alert-list">{rows.map(([icon, name], index) => <p key={name}><b>{icon}</b><span>{name}<small>Low Stock</small></span><em>{12 - index * 2} left</em></p>)}</div> }
-function OrderTable({ rows }) { return <div className="vendor-order-table"><div className="vendor-order-row head"><span>ORDER ID</span><span>CUSTOMER</span><span>PRODUCT</span><span>AMOUNT</span><span>PAYMENT</span><span>FULFILLMENT</span></div>{rows.map(([id, customer, product, amount, payment, fulfillment]) => <div className="vendor-order-row" key={id}><span>{id}</span><span>{customer}</span><span>{product}</span><strong>{amount}</strong><em>{payment}</em><em>{fulfillment}</em><Eye size={15} /></div>)}</div> }
-function DonutPanel({ title }) { return <Panel title={title} className="vendor-donut-panel"><div className="vendor-donut"><span /></div><p><i />Organic Search <strong>₹10,240</strong></p><p><i />Direct <strong>₹6,720</strong></p><p><i />Social Media <strong>₹4,360</strong></p></Panel> }
+import { ArrowRight, BadgeIndianRupee, Box, CircleAlert, ClipboardList, Heart, Image, PackagePlus, Search, ShoppingBag, Store, WalletCards } from 'lucide-react'
+
+const statCards = [
+  [Box, 'My Products', 'products', 'active', 'mint'],
+  [ShoppingBag, 'My Orders', '0', '0 pending', 'blue'],
+  [BadgeIndianRupee, 'Paid Revenue', '₹0', '₹0 this month', 'gold'],
+  [CircleAlert, 'Stock Alerts', '0', '0 out of stock', 'rose'],
+]
+
+const workspaceContent = {
+  Products: ['Product catalog', 'Create and manage your store listings.', PackagePlus, 'Add product'],
+  'Image Gallery': ['Product image gallery', 'Upload and organise the images used in your listings.', Image, 'Add images'],
+  Specifications: ['Product specifications', 'Add product details that help customers buy with confidence.', ClipboardList, 'Add specifications'],
+  'My Orders': ['My orders', 'New orders from your customers will appear here.', ShoppingBag, 'View orders'],
+  'My Wishlist': ['Wishlist items', 'Products saved by customers will appear here.', Heart, 'View wishlist'],
+}
+
+function Panel({ title, action, children, className = '' }) {
+  return <section className={`vendor-panel ${className}`}><header><div><h2>{title}</h2>{action && <small>{action}</small>}</div></header>{children}</section>
+}
+
+function EmptyState({ icon: Icon, title, copy, action, onAction }) {
+  return <div className="vendor-empty-state"><span><Icon size={25} strokeWidth={1.7} /></span><h3>{title}</h3><p>{copy}</p>{action && <button type="button" onClick={onAction}><PackagePlus size={17} />{action}</button>}</div>
+}
+
+function ProductCatalog({ products }) {
+  return <div className="vendor-product-list">{products.map((product) => <article key={product.id}><span><Box size={20} /></span><div><strong>{product.name}</strong><small>{product.category} · {product.stock} in stock</small></div><b>₹{product.price.toLocaleString('en-IN')}</b><em>Active</em></article>)}</div>
+}
+
+function Workspace({ activePage, query, onNavigate, products, onAddProduct }) {
+  const [title, copy, Icon, action] = workspaceContent[activePage]
+  const matchingProducts = products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase()))
+  return <main className="vendor-content"><div className="vendor-workspace-heading"><div><p>Seller workspace</p><h1>{title}</h1><span>TestStore · Test</span></div><button type="button" onClick={() => onNavigate('Dashboard')}>Back to dashboard</button></div><Panel title={title} action="TestStore"><div className="vendor-workspace-search"><Search size={18} /><input value={query} readOnly placeholder={`Search ${title.toLowerCase()}...`} /></div>{activePage === 'Products' && products.length ? <ProductCatalog products={matchingProducts} /> : <EmptyState icon={Icon} title={`No ${title.toLowerCase()} yet`} copy={copy} action={activePage === 'Products' ? action : undefined} onAction={onAddProduct} />}</Panel></main>
+}
+
+const quickActions = [
+  { page: 'Products', icon: PackagePlus, label: 'Add a product', meta: 'Create your first listing', tone: 'mint' },
+  { page: 'Image Gallery', icon: Image, label: 'Upload images', meta: 'Prepare product photos', tone: 'blue' },
+  { page: 'Specifications', icon: ClipboardList, label: 'Add details', meta: 'Complete specifications', tone: 'gold' },
+]
+
+export default function VendorDashboard({ activePage, query, onNavigate, products, onAddProduct }) {
+  if (activePage !== 'Dashboard') return <Workspace activePage={activePage} query={query} onNavigate={onNavigate} products={products} onAddProduct={onAddProduct} />
+
+  return <main className="vendor-content">
+    <section className="vendor-welcome"><div><p>SELLER DASHBOARD</p><h1>Good morning, Test</h1><span>Here is a clear view of your TestStore today.</span></div><div className="vendor-store-chip"><i><Store size={19} /></i><span><strong>TestStore</strong><small>Seller account</small></span></div></section>
+    <section className="vendor-stats vendor-seller-stats">{statCards.map(([Icon, label, value, detail, tone]) => { const amount = value === 'products' ? products.length : value; const caption = detail === 'active' ? `${products.length} active` : detail; return <article key={label}><i className={tone}><Icon size={21} /></i><div><p>{label}</p><strong>{amount}</strong><small className={tone === 'rose' ? 'negative' : ''}>{caption}</small></div></article> })}</section>
+    <section className="vendor-dashboard-grid">
+      <Panel title="Store performance" action="This month" className="vendor-performance-summary"><div className="vendor-revenue-card"><span>PAID REVENUE</span><strong>₹0</strong><p>Sales will appear here as soon as orders are paid.</p><div><b>0</b><small>orders received</small><b>{products.length}</b><small>products active</small></div></div><div className="vendor-performance-list"><p><span><i className="mint" />Product readiness</span><b>{products.length} of {products.length} listed</b></p><p><span><i className="blue" />Orders to fulfil</span><b>0 orders</b></p><p><span><i className="gold" />Payout status</span><b>Nothing pending</b></p></div></Panel>
+      <Panel title="Quick actions" action="Get started" className="vendor-quick-actions">
+        {quickActions.map(({ page, icon: Icon, label, meta, tone }) => (
+          <button key={label} type="button" onClick={() => page === 'Products' ? onAddProduct() : onNavigate(page)}>
+            <span className={tone}><Icon size={20} /></span>
+            <strong>{label}</strong>
+            <small>{meta}</small>
+            <ArrowRight size={16} />
+          </button>
+        ))}
+      </Panel>
+    </section>
+    <section className="vendor-dashboard-grid vendor-lower-grid"><Panel title="Order summary" action="Live status" className="vendor-order-summary">{[['Delivered', '0', 'mint'], ['Pending / Processing', '0', 'gold'], ['Cancelled / Failed', '0', 'rose'], ['Customer wishlists', '0', 'blue']].map(([label, value, tone]) => <p key={label}><span>{label}</span><b className={tone}>{value}</b></p>)}</Panel><Panel title="Recent orders" action="View all" className="vendor-recent-orders"><EmptyState icon={ShoppingBag} title="No orders for your store yet" copy="When customers place orders, you can manage them from here." /></Panel><Panel title="Your next step" action="Store setup" className="vendor-next-step"><div><span><WalletCards size={20} /></span><h3>Start selling on Aval Angadi</h3><p>Add your first product with images and clear specifications to make your store ready for customers.</p><button type="button" onClick={onAddProduct}>Set up product <ArrowRight size={15} /></button></div></Panel></section>
+  </main>
+}

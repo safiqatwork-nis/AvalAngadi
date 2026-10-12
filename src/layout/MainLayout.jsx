@@ -7,6 +7,8 @@ import { useLocation } from 'react-router-dom'
 
 function MainLayout({ children }) {
   const { pathname, search } = useLocation()
+  const routePath = pathname.replace(/\/+$/, '') || '/'
+  const isBackoffice = ['/admin', '/vendor', '/seller'].includes(routePath)
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
@@ -43,13 +45,13 @@ function MainLayout({ children }) {
   }, [pathname, search])
 
   return (
-    <div className={`flex min-h-screen flex-col bg-neutral-50 ${['/admin', '/vendor'].includes(pathname) ? '' : 'pb-[66px] lg:pb-0'}`}>
-      {!['/admin', '/vendor'].includes(pathname) && <Header />}
+    <div className={`flex min-h-screen flex-col bg-neutral-50 ${isBackoffice ? '' : 'pb-[66px] lg:pb-0'}`}>
+      {!isBackoffice && <Header />}
       {pathname === '/' && <HeroSection />}
       {pathname === '/shop' && <HeroSection variant="products" showCategories={false} />}
       <div key={`${pathname}${search}`} className="route-animate flex-1">{children}</div>
-      {!['/admin', '/vendor'].includes(pathname) && <div className="hidden lg:block"><Footer /></div>}
-      {!['/admin', '/vendor'].includes(pathname) && <MobileBottomNav />}
+      {!isBackoffice && <div className="hidden lg:block"><Footer /></div>}
+      {!isBackoffice && <MobileBottomNav />}
     </div>
   )
 }

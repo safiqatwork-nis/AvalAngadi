@@ -5,7 +5,7 @@ import AvalAngadiLogo from '../assets/aval-angadi-logo.png'
 
 const quickLinks = [
   ['About Us', '/about'],
-  ['Our Stores', '/shop'],
+  ['Our Stores', '/stores'],
   ['Products', '/shop'],
   ['Blog', '/blog'],
   ['Contact Us', '/contact'],

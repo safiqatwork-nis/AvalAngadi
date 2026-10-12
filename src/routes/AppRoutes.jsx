@@ -13,6 +13,7 @@ import Shop from '../pages/shop/Shop'
 import Profile from '../pages/profile/Profile'
 import Signup from '../pages/signup/Signup'
 import Wishlist from '../pages/wishlist/Wishlist'
+import Stores from '../pages/stores/Stores'
 
 function AppRoutes() {
   return (
@@ -22,6 +23,7 @@ function AppRoutes() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/products" element={<Shop />} />
+      <Route path="/stores" element={<Stores />} />
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />} />
@@ -29,6 +31,7 @@ function AppRoutes() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/vendor" element={<Vendor />} />
+      <Route path="/seller" element={<Vendor />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       {[

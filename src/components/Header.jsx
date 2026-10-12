@@ -221,7 +221,7 @@ function Header() {
               <HeaderAction
                 icon={Store}
                 label="Stores"
-                to="/shop"
+                to="/stores"
               />
 
               {/* Wishlist */}
@@ -348,7 +348,7 @@ function Header() {
               </Link>
 
               <Link
-                to="/shop"
+                to="/stores"
                 onClick={() => setMobileMenuOpen(false)}
                 className="border-b border-neutral-100 px-5 py-3.5 text-[12px] font-semibold text-neutral-700 hover:bg-[#fff5f5] hover:text-[#bd111b]"
               >
