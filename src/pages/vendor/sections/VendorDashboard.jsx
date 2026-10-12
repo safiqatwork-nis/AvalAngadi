@@ -1,4 +1,5 @@
-import { ArrowRight, BadgeIndianRupee, Box, CircleAlert, ClipboardList, Heart, Image, PackagePlus, Search, ShoppingBag, Store, WalletCards } from 'lucide-react'
+import { ArrowRight, BadgeIndianRupee, BanknoteArrowUp, Box, CircleAlert, ClipboardList, CreditCard, Heart, Image, Landmark, PackagePlus, Search, ShoppingBag, Store, WalletCards } from 'lucide-react'
+import { useState } from 'react'
 
 const statCards = [
   [Box, 'My Products', 'products', 'active', 'mint'],
@@ -27,6 +28,11 @@ function ProductCatalog({ products }) {
   return <div className="vendor-product-list">{products.map((product) => <article key={product.id}><span><Box size={20} /></span><div><strong>{product.name}</strong><small>{product.category} · {product.stock} in stock</small></div><b>₹{product.price.toLocaleString('en-IN')}</b><em>Active</em></article>)}</div>
 }
 
+function PaymentsWorkspace({ onNavigate }) {
+  const [bankConnected, setBankConnected] = useState(false)
+  return <main className="vendor-content"><div className="vendor-workspace-heading"><div><p>Seller workspace</p><h1>Payments</h1><span>TestStore · Test</span></div><button type="button" onClick={() => onNavigate('Dashboard')}>Back to dashboard</button></div><section className="vendor-payment-overview"><div className="vendor-payment-balance"><span><WalletCards size={21} /></span><p>AVAILABLE TO PAY OUT</p><strong>₹0</strong><small>Sales are added after an order is delivered and paid.</small><button type="button" disabled><BanknoteArrowUp size={16} />Request payout</button></div><div className="vendor-payment-metrics"><article><span className="mint"><BadgeIndianRupee size={19} /></span><p>Payment received<strong>₹0</strong><small>This month</small></p></article><article><span className="gold"><WalletCards size={19} /></span><p>Pending payout<strong>₹0</strong><small>No payout requests</small></p></article><article><span className="blue"><ShoppingBag size={19} /></span><p>Paid orders<strong>0</strong><small>This month</small></p></article></div></section><section className="vendor-payment-grid"><Panel title="Payout account" action={bankConnected ? 'Connected' : 'Action needed'} className="vendor-bank-panel"><div className="vendor-bank-account"><span><Landmark size={23} /></span><div><h3>{bankConnected ? 'Bank account connected' : 'Connect your bank account'}</h3><p>{bankConnected ? 'Your payouts will be sent to your saved bank account.' : 'Add a bank account to receive your sales payouts.'}</p></div><button type="button" onClick={() => setBankConnected((current) => !current)}>{bankConnected ? 'Manage account' : 'Connect account'}</button></div></Panel><Panel title="Payment history" action="All transactions" className="vendor-payment-history"><div className="vendor-payment-empty"><CreditCard size={25} /><h3>No transactions yet</h3><p>Completed customer payments and payouts will appear here.</p></div></Panel></section></main>
+}
+
 function Workspace({ activePage, query, onNavigate, products, onAddProduct }) {
   const [title, copy, Icon, action] = workspaceContent[activePage]
   const matchingProducts = products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase()))
@@ -40,6 +46,7 @@ const quickActions = [
 ]
 
 export default function VendorDashboard({ activePage, query, onNavigate, products, onAddProduct }) {
+  if (activePage === 'Payments') return <PaymentsWorkspace onNavigate={onNavigate} />
   if (activePage !== 'Dashboard') return <Workspace activePage={activePage} query={query} onNavigate={onNavigate} products={products} onAddProduct={onAddProduct} />
 
   return <main className="vendor-content">
