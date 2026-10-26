@@ -8,7 +8,9 @@ import { useLocation } from 'react-router-dom'
 function MainLayout({ children }) {
   const { pathname, search } = useLocation()
   const routePath = pathname.replace(/\/+$/, '') || '/'
+  const isAuthPage = ['/login', '/signup', '/forgot-password'].includes(routePath)
   const isBackoffice = ['/admin', '/vendor', '/seller'].includes(routePath)
+  const isMinimalLayout = isBackoffice || isAuthPage
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
@@ -45,13 +47,13 @@ function MainLayout({ children }) {
   }, [pathname, search])
 
   return (
-    <div className={`flex min-h-screen flex-col bg-neutral-50 ${isBackoffice ? '' : 'pb-[66px] lg:pb-0'}`}>
-      {!isBackoffice && <Header />}
+    <div className={`flex min-h-screen flex-col ${isAuthPage ? 'bg-[#F7F4EB]' : 'bg-neutral-50'} ${isMinimalLayout ? '' : 'pb-[66px] lg:pb-0'}`}>
+      {!isMinimalLayout && <Header />}
       {pathname === '/' && <HeroSection />}
       {pathname === '/shop' && <HeroSection variant="products" showCategories={false} />}
-      <div key={`${pathname}${search}`} className="route-animate flex-1">{children}</div>
-      {!isBackoffice && <div className="hidden lg:block"><Footer /></div>}
-      {!isBackoffice && <MobileBottomNav />}
+      <div key={`${pathname}${search}`} className={`flex-1 ${isAuthPage ? 'flex flex-col' : 'route-animate'}`}>{children}</div>
+      {!isMinimalLayout && <div className="hidden lg:block"><Footer /></div>}
+      {!isMinimalLayout && <MobileBottomNav />}
     </div>
   )
 }

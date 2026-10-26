@@ -35,7 +35,7 @@ function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       {[
-
+        ['/forgot-password', 'Forgot Password'],
         ['/blog', 'Blog'],
         ['/order-tracking', 'Order Tracking'],
         ['/returns', 'Returns & Refunds'],
