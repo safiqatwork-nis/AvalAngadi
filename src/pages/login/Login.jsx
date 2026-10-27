@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react'
 import avalAngadiLogo from '../../assets/aval-angadi-logo.png'
+import heroNaturalProducts from '../../assets/hero-natural-products-branded.png'
 import botanicalBranch from '../../assets/decorations/botanical-branch.png'
+import oliveBranch from '../../assets/decorations/olive-branch.png'
 import './Login.css'
 
 function GoogleIcon() {
@@ -145,11 +147,12 @@ export default function Login() {
           message: `Welcome back, ${displayName}! Redirecting...`,
         })
 
-        const destination = location.state?.from || '/profile'
+        // Redirect to home page or previous attempted route
+        const destination = location.state?.from || '/'
         setTimeout(() => {
           navigate(destination)
-        }, 1200)
-      }, 700)
+        }, 1000)
+      }, 600)
     } catch {
       setIsSubmitting(false)
       setNotification({
@@ -182,6 +185,20 @@ export default function Login() {
 
   return (
     <div className="login-page-wrapper">
+      {/* Corner Botanical Leaf Decorations - positioned on the fixed wrapper */}
+      <img
+        src={oliveBranch}
+        alt=""
+        aria-hidden="true"
+        className="botanical-leaf-top-right"
+      />
+      <img
+        src={botanicalBranch}
+        alt=""
+        aria-hidden="true"
+        className="botanical-leaf-bottom-left"
+      />
+
       {/* Toast Notification Alert */}
       {notification && (
         <div
@@ -198,20 +215,25 @@ export default function Login() {
         </div>
       )}
 
-      {/* Main Two-Panel Card */}
+      {/* Main Full-Viewport Two-Panel Container */}
       <div className="login-card-container">
         {/* =========================================================
-            LEFT PANEL - BRAND SECTION
+            LEFT PANEL - BRAND SECTION (53% width on desktop)
         ========================================================== */}
-        <section className="login-left-panel" aria-label="Brand Overview">
+        <section
+          className="login-left-panel"
+          style={{ '--hero-img': `url(${heroNaturalProducts})` }}
+          aria-label="Brand Overview"
+        >
           <div className="login-left-content">
             {/* Aval Angadi Logo & Title */}
-            <Link to="/" className="inline-flex items-center gap-3 group text-decoration-none" title="Go to home">
+            <Link to="/" className="inline-flex items-center gap-3.5 group text-decoration-none" title="Go to home">
               <img
                 src={avalAngadiLogo}
                 alt="Aval Angadi"
                 className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
+              <div className="h-8 sm:h-9 w-[1.5px] bg-[#C81020]/35 mx-0.5 rounded-full" aria-hidden="true" />
               <div className="flex flex-col">
                 <span className="text-[21px] sm:text-[23px] font-bold text-[#C81020] leading-none tracking-tight">
                   Aval Angadi
@@ -240,28 +262,15 @@ export default function Login() {
             {/* Leaf Icon with Subtle Decorative Line */}
             <div className="mt-4 sm:mt-5 flex items-center gap-2.5" aria-hidden="true">
               <SmallLeafIcon />
-              <span className="h-[1.5px] w-12 bg-[#8CA483]/70 rounded-full" />
+              <span className="h-[1.5px] w-14 bg-[#8CA483]/80 rounded-full" />
             </div>
           </div>
         </section>
 
         {/* =========================================================
-            RIGHT PANEL - LOGIN FORM
+            RIGHT PANEL - LOGIN FORM (47% width on desktop)
         ========================================================== */}
         <section className="login-right-panel" aria-label="Account Login Form">
-          {/* Botanical Corner Decorations */}
-          <img
-            src={botanicalBranch}
-            alt=""
-            aria-hidden="true"
-            className="botanical-leaf-top-right"
-          />
-          <img
-            src={botanicalBranch}
-            alt=""
-            aria-hidden="true"
-            className="botanical-leaf-bottom-left"
-          />
 
           <div className="login-form-inner">
             {/* Center Logo & Brand Name */}
@@ -270,9 +279,9 @@ export default function Login() {
                 <img
                   src={avalAngadiLogo}
                   alt="Aval Angadi"
-                  className="h-11 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                  className="h-10 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
                 />
-                <span className="mt-1 text-[21px] sm:text-[23px] font-bold text-[#C81020] leading-none tracking-tight">
+                <span className="mt-1 text-[20px] sm:text-[22px] font-bold text-[#C81020] leading-none tracking-tight">
                   Aval Angadi
                 </span>
                 <span className="mt-1 text-[10px] sm:text-[11px] font-medium text-[#566355] tracking-tight">
@@ -282,7 +291,7 @@ export default function Login() {
             </div>
 
             {/* Welcome Heading & Subtitle */}
-            <div className="mt-5 sm:mt-6 text-center">
+            <div className="mt-4 sm:mt-5 text-center">
               <h2 className="login-serif-title login-form-heading">
                 Welcome Back!
               </h2>

@@ -1,65 +1,62 @@
 /* Login Page Styles - Aval Angadi */
 
+/* Override global body background for login page */
 .login-page-wrapper {
-  min-height: 100vh;
-  width: 100%;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #F7F4EB;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(21, 91, 59, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(200, 16, 32, 0.03) 0%, transparent 40%);
-  padding: 24px 16px;
   box-sizing: border-box;
+  background-color: #FBF8EF;
+  overflow: hidden;
+  z-index: 0;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 767px) {
   .login-page-wrapper {
-    padding: 32px 24px;
+    position: relative;
+    inset: auto;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
-@media (min-width: 1024px) {
-  .login-page-wrapper {
-    padding: 24px;
-  }
-}
-
-/* Outer Card Container */
+/* Outer Full-Viewport Two-Panel Container */
 .login-card-container {
   width: 100%;
-  max-width: 460px;
-  background: #FCF9F2;
-  border-radius: 24px;
-  overflow: hidden;
+  height: 100%;
+  min-height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
-  box-shadow: 
-    0 20px 50px -10px rgba(45, 52, 40, 0.12),
-    0 8px 20px -6px rgba(45, 52, 40, 0.05),
-    0 0 0 1px rgba(215, 206, 188, 0.6);
-  position: relative;
+  background: #FCF9F2;
+  box-sizing: border-box;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
   .login-card-container {
-    max-width: 1020px;
     flex-direction: row;
-    height: 660px;
-    max-height: 680px;
-    border-radius: 28px;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
   }
 }
 
-@media (min-width: 1024px) {
-  .login-card-container {
-    height: 675px;
-    max-height: 700px;
-  }
-}
-
-/* Left Brand Panel */
+/* =========================================================
+   LEFT BRAND HERO PANEL (approx 53% width on desktop)
+========================================================== */
 .login-left-panel {
   display: none;
 }
@@ -67,18 +64,21 @@
 @media (min-width: 768px) {
   .login-left-panel {
     display: flex;
-    position: relative;
-    overflow: hidden;
     flex-direction: column;
     justify-content: space-between;
-    width: 50%;
-    flex: 0 0 50%;
-    padding: 28px 24px 24px;
+    width: 53%;
+    flex: 0 0 53%;
+    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 34px 38px 28px 46px;
     background-color: #FBF8EF;
     background-image: 
-      linear-gradient(180deg, #FBF8EF 0%, rgba(251, 248, 239, 0.96) 24%, rgba(251, 248, 239, 0.5) 45%, rgba(251, 248, 239, 0) 62%),
-      url('/src/assets/hero-natural-products-branded.png');
-    background-position: 78% bottom;
+      linear-gradient(180deg, rgba(251, 248, 239, 0.88) 0%, rgba(251, 248, 239, 0.58) 22%, rgba(251, 248, 239, 0.12) 42%, transparent 60%),
+      var(--hero-img, url('/src/assets/hero-natural-products-branded.png'));
+    background-position: 79% bottom;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -86,9 +86,15 @@
 
 @media (min-width: 1024px) {
   .login-left-panel {
-    width: 52%;
-    flex: 0 0 52%;
-    padding: 32px 36px 28px;
+    padding: 40px 48px 32px 52px;
+    background-position: 79% bottom;
+  }
+}
+
+@media (min-width: 1366px) {
+  .login-left-panel {
+    padding: 44px 56px 36px 60px;
+    background-position: 78% bottom;
   }
 }
 
@@ -96,7 +102,7 @@
 .login-left-content {
   position: relative;
   z-index: 10;
-  max-width: 440px;
+  max-width: 460px;
 }
 
 /* Headings with Serif Font */
@@ -104,101 +110,140 @@
   font-family: Georgia, 'Playfair Display', Cambria, 'Times New Roman', serif;
   font-weight: 700;
   color: #12422C;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 .login-left-heading {
   font-size: 32px;
-  line-height: 1.06;
-  margin-top: 18px;
+  line-height: 1.08;
+  margin-top: 22px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1024px) {
   .login-left-heading {
-    font-size: 36px;
+    font-size: 38px;
+    margin-top: 26px;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1366px) {
   .login-left-heading {
-    font-size: 38px;
+    font-size: 42px;
+    margin-top: 30px;
   }
 }
 
 .login-left-desc {
   font-size: 13px;
-  line-height: 1.45;
+  line-height: 1.5;
   color: #2F3D2E;
-  margin-top: 12px;
+  margin-top: 13px;
   max-width: 330px;
   font-weight: 450;
 }
 
-/* Right Form Panel */
+@media (min-width: 1024px) {
+  .login-left-desc {
+    font-size: 14px;
+    max-width: 360px;
+    margin-top: 15px;
+  }
+}
+
+/* =========================================================
+   RIGHT FORM PANEL (approx 47% width on desktop)
+========================================================== */
 .login-right-panel {
   position: relative;
   background: #FCF9F2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding: 34px 22px 28px;
-  overflow: hidden;
+  padding: 28px 20px;
+  overflow: visible;
   width: 100%;
+  min-height: 100svh;
+  box-sizing: border-box;
 }
+
 
 @media (min-width: 768px) {
   .login-right-panel {
-    width: 50%;
-    flex: 0 0 50%;
-    padding: 26px 28px 24px;
+    width: 47%;
+    flex: 0 0 47%;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 28px 32px;
+    justify-content: center;
+    overflow: visible;
   }
 }
 
 @media (min-width: 1024px) {
   .login-right-panel {
-    width: 48%;
-    flex: 0 0 48%;
-    padding: 30px 38px 26px;
+    padding: 32px 42px;
   }
 }
 
-/* Botanical Leaves Overlay */
+@media (min-width: 1366px) {
+  .login-right-panel {
+    padding: 36px 54px;
+  }
+}
+
+/* Botanical Leaves Overlay - positioned on the fixed full-viewport wrapper */
 .botanical-leaf-top-right {
   position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 115px;
+  top: -10px;
+  right: -10px;
+  width: 150px;
   height: auto;
   pointer-events: none;
   user-select: none;
-  z-index: 1;
+  z-index: 10;
   opacity: 0.95;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.04));
-  transform: rotate(-10deg);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+  /* Rotate so the stem points toward center and leaves fan toward the corner */
+  transform: rotate(140deg);
+  transform-origin: center center;
 }
 
 .botanical-leaf-bottom-left {
   position: absolute;
-  bottom: -8px;
-  left: -8px;
-  width: 105px;
+  /* Aligned to bottom of right panel: bottom=0, left=53% (left panel width) */
+  bottom: 0;
+  left: 53%;
+  width: 125px;
   height: auto;
   pointer-events: none;
   user-select: none;
-  z-index: 1;
+  z-index: 10;
   opacity: 0.92;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.04));
-  transform: rotate(185deg);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+  transform: rotate(15deg);
+  transform-origin: bottom left;
 }
 
-@media (min-width: 640px) {
+/* On mobile (single column), show bottom-left leaf at left edge */
+@media (max-width: 767px) {
   .botanical-leaf-top-right {
-    width: 130px;
+    width: 110px;
+  }
+  .botanical-leaf-bottom-left {
+    left: 0;
+    width: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .botanical-leaf-top-right {
+    width: 165px;
   }
 
   .botanical-leaf-bottom-left {
-    width: 120px;
+    width: 145px;
   }
 }
 
@@ -207,9 +252,10 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 350px;
+  max-width: 375px;
   display: flex;
   flex-direction: column;
+  margin: auto 0;
 }
 
 .login-form-heading {
@@ -227,11 +273,11 @@
 
 .login-form-subtitle {
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.42;
   color: #4B5749;
   text-align: center;
   margin-top: 5px;
-  max-width: 300px;
+  max-width: 310px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -246,7 +292,7 @@
 
 .login-input-icon {
   position: absolute;
-  left: 13px;
+  left: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,14 +302,14 @@
 
 .login-input {
   width: 100%;
-  height: 42px;
-  padding-left: 38px;
+  height: 43px;
+  padding-left: 40px;
   padding-right: 14px;
-  border-radius: 10px;
+  border-radius: 9px;
   border: 1px solid #DFD9CD;
   background-color: #FFFFFF;
   color: #202E20;
-  font-size: 13px;
+  font-size: 13.5px;
   font-family: inherit;
   outline: none;
   transition: all 0.2s ease;
@@ -290,7 +336,7 @@
 }
 
 .login-input-password {
-  padding-right: 38px;
+  padding-right: 42px;
 }
 
 .login-toggle-password-btn {
@@ -303,7 +349,7 @@
   border: none;
   color: #798677;
   cursor: pointer;
-  padding: 5px;
+  padding: 6px;
   border-radius: 6px;
   transition: color 0.15s ease;
 }
@@ -316,7 +362,7 @@
 .login-submit-btn {
   width: 100%;
   height: 43px;
-  border-radius: 10px;
+  border-radius: 9px;
   background-color: #C81020;
   color: #FFFFFF;
   font-size: 13.5px;
@@ -324,7 +370,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 8px;
   border: none;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -350,7 +396,7 @@
 .login-google-btn {
   width: 100%;
   height: 43px;
-  border-radius: 10px;
+  border-radius: 9px;
   background-color: #FFFFFF;
   border: 1px solid #DFD9CD;
   color: #273326;
@@ -359,7 +405,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
@@ -382,7 +428,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px 0;
+  margin: 9px 0;
 }
 
 .login-divider::before {
@@ -391,14 +437,14 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: #E2DDD0;
+  background-color: #E4DFD3;
 }
 
 .login-divider-text {
   position: relative;
   background-color: #FCF9F2;
   padding: 0 12px;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 600;
   color: #8C968A;
   letter-spacing: 0.06em;

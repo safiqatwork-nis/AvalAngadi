@@ -17,6 +17,15 @@ function MainLayout({ children }) {
   }, [pathname, search])
 
   useEffect(() => {
+    if (isAuthPage) {
+      document.body.classList.add('auth-page')
+    } else {
+      document.body.classList.remove('auth-page')
+    }
+    return () => document.body.classList.remove('auth-page')
+  }, [isAuthPage])
+
+  useEffect(() => {
     const animatedNodes = document.querySelectorAll(
       'section, article, li, .product-card, .category-card, .testimonial-card, .stat-card, .newsletter, .info-card, .feature-card, [data-animate]'
     )
@@ -47,11 +56,11 @@ function MainLayout({ children }) {
   }, [pathname, search])
 
   return (
-    <div className={`flex min-h-screen flex-col ${isAuthPage ? 'bg-[#F7F4EB]' : 'bg-neutral-50'} ${isMinimalLayout ? '' : 'pb-[66px] lg:pb-0'}`}>
+    <div className={`${isAuthPage ? 'contents' : `flex min-h-screen flex-col bg-neutral-50 ${isMinimalLayout ? '' : 'pb-[66px] lg:pb-0'}`}`}>
       {!isMinimalLayout && <Header />}
       {pathname === '/' && <HeroSection />}
       {pathname === '/shop' && <HeroSection variant="products" showCategories={false} />}
-      <div key={`${pathname}${search}`} className={`flex-1 ${isAuthPage ? 'flex flex-col' : 'route-animate'}`}>{children}</div>
+      <div key={`${pathname}${search}`} className={`${isAuthPage ? '' : 'flex-1 route-animate'}`}>{children}</div>
       {!isMinimalLayout && <div className="hidden lg:block"><Footer /></div>}
       {!isMinimalLayout && <MobileBottomNav />}
     </div>
